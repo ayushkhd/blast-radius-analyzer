@@ -42,6 +42,7 @@ if TYPE_CHECKING:
 _LOG = logging.getLogger(__name__)
 
 PROVIDER_NAME = "anthropic"
+DEFAULT_MODEL = "claude-opus-5"
 
 _Effort = Literal["low", "medium", "high", "xhigh", "max"]
 _EFFORTS: tuple[_Effort, ...] = ("low", "medium", "high", "xhigh", "max")
@@ -214,7 +215,7 @@ class AnthropicProvider:
         installed or the SDK finds no credential.
       ValueError: If ``settings.llm_effort`` is not an effort level.
     """
-    self.model = settings.llm_model
+    self.model = settings.llm_model or DEFAULT_MODEL
     self._effort = _effort(settings.llm_effort)
     self._max_tokens = settings.llm_max_tokens
     self._timeout_s = settings.llm_timeout_s

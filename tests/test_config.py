@@ -24,8 +24,8 @@ def test_defaults_enable_every_retrieval_stage():
   assert settings.enable_keyword
   assert settings.enable_dense
   assert settings.enable_rerank
-  assert settings.llm_provider == "anthropic"
-  assert settings.llm_model == "claude-opus-5"
+  assert settings.llm_provider == "openai"
+  assert settings.llm_model is None
 
 
 def test_threat_weights_sum_to_one_by_default():

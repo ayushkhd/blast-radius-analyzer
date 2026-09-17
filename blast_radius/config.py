@@ -7,8 +7,9 @@ language model. Variables take the ``BLAST_`` prefix, e.g.
 read if present.
 
 The language-model API key is deliberately not a setting. The provider SDK
-reads ``ANTHROPIC_API_KEY`` itself, so the key never passes through this
-process's own configuration, logs or responses.
+reads ``OPENAI_API_KEY`` or ``ANTHROPIC_API_KEY`` from the environment itself,
+so the key never passes through this process's own configuration, logs or
+responses.
 """
 
 import pathlib
@@ -17,7 +18,7 @@ from typing import Literal
 import pydantic
 import pydantic_settings
 
-LlmProviderName = Literal["anthropic", "none"]
+LlmProviderName = Literal["openai", "anthropic", "none"]
 
 
 class Settings(pydantic_settings.BaseSettings):
@@ -71,9 +72,11 @@ class Settings(pydantic_settings.BaseSettings):
       hosts.
     baseline_criticality: The criticality that maps to an exposure of 1.
     group_example_count: Example host names listed per group.
-    llm_provider: ``anthropic``, or ``none`` to run without a language
-      model.
-    llm_model: Model identifier passed to the provider.
+    llm_provider: ``openai``, ``anthropic``, or ``none`` to run without a
+      language model.
+    llm_model: Model identifier passed to the provider. None means the
+      provider's own default: ``gpt-5.6-luna`` for OpenAI and
+      ``claude-opus-5`` for Anthropic.
     llm_effort: Reasoning effort passed to the provider.
     llm_max_tokens: Output token cap per call.
     llm_timeout_s: Per-attempt timeout in seconds.
@@ -120,8 +123,8 @@ class Settings(pydantic_settings.BaseSettings):
   baseline_criticality: int = pydantic.Field(default=3, gt=0)
   group_example_count: int = pydantic.Field(default=4, gt=0)
 
-  llm_provider: LlmProviderName = "anthropic"
-  llm_model: str = "claude-opus-5"
+  llm_provider: LlmProviderName = "openai"
+  llm_model: str | None = None
   llm_effort: str = "low"
   llm_max_tokens: int = pydantic.Field(default=16000, gt=0)
   llm_timeout_s: float = pydantic.Field(default=90.0, gt=0)

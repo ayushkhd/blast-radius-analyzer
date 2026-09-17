@@ -25,7 +25,9 @@ make eval      # print the retrieval comparison table
 ```
 
 Search and host resolution need no API key, and no network once the models are
-cached. Set `ANTHROPIC_API_KEY` to get the written brief as well. Without it
+cached. Set `OPENAI_API_KEY`, in the environment or in `.env`, to get the
+written brief as well (or `ANTHROPIC_API_KEY` with
+`BLAST_LLM_PROVIDER=anthropic`). Without it
 the service returns everything except the prose.
 
 ## Getting the data
@@ -371,18 +373,23 @@ of its highest host.
 
 ### Writing and verifying the brief
 
-*   **Provider.** A small protocol, `complete(prompt, schema) -> RawResponse`,
-    isolates the model. The default implementation uses the Anthropic SDK with
-    `claude-opus-5`, schema-constrained output (`output_config.format`), and
-    low effort, since both calls are short extraction and summarisation tasks.
-    `claude-opus-5` does not accept sampling parameters, so reproducibility
-    comes from frozen prompt files whose hash is recorded in every response,
-    not from a temperature of zero.
-*   **Refusals.** The corpus is vulnerability text, so a safety classifier may
-    decline a request (`stop_reason: "refusal"`). The client opts into the
-    API's server-side fallback, which is a beta feature. If that also
-    declines, or the call fails for any reason, the service returns the no-LLM
-    response with a notice.
+*   **Provider.** A small protocol,
+    `complete(system, prompt, schema) -> RawResponse`, isolates the model, and
+    a provider never raises: a timeout, an API error, a refusal and
+    unparseable output all come back as a failed response. Two providers
+    implement it. The default is OpenAI's Responses API with `gpt-5.6-luna`
+    and a strict `json_schema` format; the other is Anthropic's Messages API
+    with `claude-opus-5` and `output_config.format`. Both run at low effort,
+    since the two calls are short extraction and summarisation tasks, and
+    neither sends sampling parameters, which reasoning models reject, so
+    reproducibility comes from frozen prompt files whose hash is recorded in
+    every response, not from a temperature of zero. The OpenAI provider sends
+    `store: false`, because the context pack describes a real environment.
+*   **Refusals.** The corpus is vulnerability text, so a model may decline a
+    request. Both providers look for a refusal before reading any text. The
+    Anthropic provider also opts into the API's server-side fallback, which
+    is a beta feature. If the model declines, or the call fails for any
+    reason, the service returns the no-LLM response with a notice.
 *   **Context pack.** The model receives the matched chunks, the fix-evidence
     chunks and a summary of the host groups: counts, group names and a few
     example hosts. It never receives the full host list, which the UI renders
@@ -657,7 +664,7 @@ blast_radius/
     retriever.py    composes the stages; match, margin and abstention
   ranking.py        the priority formula and host grouping
   fix_evidence.py   what the matched write-ups say about fixing it
-  llm/              provider protocol, Anthropic provider, prompt rendering
+  llm/              provider protocol, OpenAI and Anthropic providers, prompts
   prompts/          the parse and write prompts, frozen and hashed
   verify.py         quote and identifier checks on the written brief
   pipeline.py       the seven steps and the trace
@@ -678,9 +685,10 @@ Dockerfile  compose.yaml  Makefile  pyproject.toml  pylintrc  CONTRIBUTING.md
 
 | Variable                     | Default                  | Meaning                                             |
 |------------------------------|--------------------------|-----------------------------------------------------|
-| `ANTHROPIC_API_KEY`          | unset                    | Read by the SDK itself; enables the written brief   |
-| `BLAST_LLM_PROVIDER`         | `anthropic`              | `none` forces no-LLM mode                           |
-| `BLAST_LLM_MODEL`            | `claude-opus-5`          | Model for the parse and write steps                 |
+| `OPENAI_API_KEY`             | unset                    | Read by the SDK itself; enables the written brief   |
+| `ANTHROPIC_API_KEY`          | unset                    | The same, when the provider is `anthropic`          |
+| `BLAST_LLM_PROVIDER`         | `openai`                 | `openai`, `anthropic`, or `none` for no-LLM mode    |
+| `BLAST_LLM_MODEL`            | the provider's default   | `gpt-5.6-luna` for OpenAI, `claude-opus-5` for Anthropic |
 | `BLAST_DATA_DIR`             | `data`                   | Where the scanner exports are read                  |
 | `BLAST_ARTIFACT_PATH`        | `artifacts/index.sqlite` | The index artifact                                  |
 | `BLAST_ENABLE_KEYWORD`       | `true`                   | BM25 keyword search                                 |
@@ -713,8 +721,8 @@ make fmt       # rewrite files to the house style
 *   **No test touches the network or downloads a model.** Retrieval tests use a
     hashing embedder and a lexical reranker; pipeline and API tests use a
     scripted provider; the Anthropic provider is tested against the real SDK
-    over a mock HTTP transport, which pins the exact request it sends. It has
-    not been exercised against the live API.
+    over a mock HTTP transport, which pins the exact request it sends, and the
+    OpenAI provider against a fake client that pins the same.
 *   **What is covered.** Join validation and every way it can fail, atomic
     ingest, HTML cleaning, the chunker and trace detection, the FTS query
     builder against hostile input, fusion arithmetic, the match gate, the

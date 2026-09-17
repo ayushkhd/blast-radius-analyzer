@@ -17,6 +17,7 @@ dependencies = [
 # without it, so a deployment that never writes prose never pulls the SDK in.
 [project.optional-dependencies]
 anthropic = ["anthropic>=1.6,<2"]
+openai = ["openai>=1.50"]
 
 [project.scripts]
 blast-radius = "blast_radius.cli:main"

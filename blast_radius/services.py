@@ -17,8 +17,8 @@ from blast_radius import config
 from blast_radius import embeddings
 from blast_radius import pipeline as pipeline_lib
 from blast_radius import store
-from blast_radius.llm import anthropic_provider
 from blast_radius.llm import base as llm_base
+from blast_radius.llm import factory as llm_factory
 from blast_radius.retrieval import rerank
 from blast_radius.retrieval import retriever as retriever_lib
 
@@ -90,7 +90,7 @@ def build(
   try:
     retriever = build_retriever(db, settings)
     if provider is None and use_llm:
-      provider = anthropic_provider.create(settings)
+      provider = llm_factory.create(settings)
     pipeline = pipeline_lib.Pipeline(db, retriever, provider, settings)
   except Exception:
     db.close()

@@ -4,7 +4,7 @@
 #
 #   make ingest && docker compose up --build
 #
-# ANTHROPIC_API_KEY is passed through when it is set in the shell or in .env;
+# OPENAI_API_KEY is passed through when it is set in the shell or in .env;
 # without it the service answers with everything except the written brief.
 
 services:
@@ -14,8 +14,9 @@ services:
     ports:
       - "8000:8000"
     environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
-      BLAST_LLM_PROVIDER: ${BLAST_LLM_PROVIDER:-anthropic}
+      BLAST_LLM_PROVIDER: ${BLAST_LLM_PROVIDER:-openai}
       BLAST_LOG_LEVEL: ${BLAST_LOG_LEVEL:-INFO}
     volumes:
       - ./artifacts:/data:ro

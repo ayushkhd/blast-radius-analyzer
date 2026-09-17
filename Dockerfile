@@ -19,7 +19,8 @@ WORKDIR /app
 # reinstalls nothing and downloads nothing.
 COPY pyproject.toml uv.lock README.md ./
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --frozen --no-dev --extra anthropic --no-install-project
+    uv sync --frozen --no-dev --extra openai --extra anthropic \
+    --no-install-project
 
 # The defaults of BLAST_EMBEDDING_MODEL and BLAST_RERANK_MODEL in config.py.
 # Override both here and at run time to ship different models.
@@ -33,7 +34,7 @@ TextCrossEncoder('${RERANK_MODEL}', cache_dir='/opt/models')"
 
 COPY blast_radius ./blast_radius
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --frozen --no-dev --extra anthropic --no-editable
+    uv sync --frozen --no-dev --extra openai --extra anthropic --no-editable
 
 
 FROM python:3.12-slim AS runtime
