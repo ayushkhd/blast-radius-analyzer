@@ -24,7 +24,7 @@ data:
 	  && test -f $(DATA_DIR)/vulns_data_scrubbed.json \
 	  || { echo "Put asset_data_scrubbed.json and vulns_data_scrubbed.json" \
 	       "in $(DATA_DIR)/ (see README, 'Getting the data')."; exit 1; }
-	cd $(DATA_DIR) && shasum -a 256 -c ../data.sha256
+	cd $(DATA_DIR) && shasum -a 256 -c $(CURDIR)/data.sha256
 
 ingest: data
 	uv run blast-radius ingest --data-dir $(DATA_DIR)

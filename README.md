@@ -46,15 +46,18 @@ An example using real values from the reference dataset:
 ```
 Query    OpenSSH auth bypass, affects versions up to 9.6
 
-Match    QID 38919, OpenSSH, severity 4, no CVE attached             [1]
+Match    QID 38919, OpenSSH row hammer auth bypass, severity 4, no CVE  [1]
+         QID 38915, OpenSSH command injection before 9.6, CVE-2023-51385 [2]
 Hosts    341 affected, all running, all with port 22 open
 First    adm-bastion-dev, dev-nat-gateway-a, -b and -c
          internet-facing, criticality 5
 Then     327 Kubernetes workers in three security groups (140, 99, 88)
          10 other internal hosts
 Do       Upgrade OpenSSH to a version later than 9.6.
-         "Affected Versions: OpenSSH up to version 9.6"               [1]
-Caveat   The data holds no patch reference for this QID.
+         "Affected Versions: OpenSSH up to version 9.6"                  [1]
+         "Affected Versions: OpenSSH before version 9.6"                 [2]
+Fix      One patch reference and two advisories for CVE-2023-51385;
+         the data holds no patch reference for QID 38919.
 ```
 
 The host table, the ordering and every number are computed from the data. The
@@ -169,8 +172,9 @@ one of them, QID 38919 (OpenSSH), is the most widespread explained finding, on
 341 hosts.
 
 **Fix evidence that does exist.** 160 CVEs have a reference tagged "Patch" and
-43 have one tagged as an advisory. 25 of the 48 diagnoses state affected
-versions. All 20 Ubuntu QIDs name the package whose security update fixes them.
+43 have one tagged as an advisory. 24 of the 48 diagnoses have an "Affected
+Versions" section. All 20 Ubuntu QIDs name the package whose security update
+fixes them.
 
 **What that implies.**
 
