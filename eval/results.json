@@ -1,0 +1,3864 @@
+{
+  "dataset_sha256": {
+    "assets": "b129b96056d5259eebec172c6537cb2ff883eb3697532aa2de162f7eb3ebb757",
+    "vulns": "f516ad373384e22d0481cdb056080bbbc24ee17cedb95052047e2110c393e8e4"
+  },
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "rerank_model": "Xenova/ms-marco-MiniLM-L-6-v2",
+  "abstain_rerank_floor": -4.0,
+  "abstain_dense_floor": 0.6,
+  "match_margin": 1.0,
+  "match_margin_dense": 0.05,
+  "tables": {
+    "All questions": {
+      "bm25": {
+        "questions": 40,
+        "recall_at_5": "0.97 (34/35)",
+        "precision_at_5": "0.54 (n=35)",
+        "mrr": "0.87 (n=35)",
+        "cve_recall_at_5": "0.89 (16/18)",
+        "host_precision": "0.94 (n=35)",
+        "host_recall": "0.83 (n=35)",
+        "abstention": "0.90 (36/40)",
+        "latency_p50_ms": 1.6,
+        "latency_p95_ms": 4.8
+      },
+      "dense": {
+        "questions": 40,
+        "recall_at_5": "0.94 (33/35)",
+        "precision_at_5": "0.53 (n=35)",
+        "mrr": "0.87 (n=35)",
+        "cve_recall_at_5": "0.83 (15/18)",
+        "host_precision": "0.89 (n=35)",
+        "host_recall": "0.94 (n=35)",
+        "abstention": "0.90 (36/40)",
+        "latency_p50_ms": 27.9,
+        "latency_p95_ms": 48.3
+      },
+      "hybrid": {
+        "questions": 40,
+        "recall_at_5": "0.91 (32/35)",
+        "precision_at_5": "0.51 (n=35)",
+        "mrr": "0.87 (n=35)",
+        "cve_recall_at_5": "0.83 (15/18)",
+        "host_precision": "0.86 (n=35)",
+        "host_recall": "0.86 (n=35)",
+        "abstention": "0.90 (36/40)",
+        "latency_p50_ms": 32.2,
+        "latency_p95_ms": 84.8
+      },
+      "hybrid+rerank": {
+        "questions": 40,
+        "recall_at_5": "0.91 (32/35)",
+        "precision_at_5": "0.51 (n=35)",
+        "mrr": "0.89 (n=35)",
+        "cve_recall_at_5": "0.83 (15/18)",
+        "host_precision": "0.87 (n=35)",
+        "host_recall": "0.86 (n=35)",
+        "abstention": "0.90 (36/40)",
+        "latency_p50_ms": 35.3,
+        "latency_p95_ms": 473.5
+      }
+    },
+    "Search questions only (paraphrase, product, negative)": {
+      "bm25": {
+        "questions": 30,
+        "recall_at_5": "0.96 (24/25)",
+        "precision_at_5": "0.35 (n=25)",
+        "mrr": "0.82 (n=25)",
+        "cve_recall_at_5": "0.89 (16/18)",
+        "host_precision": "0.92 (n=25)",
+        "host_recall": "0.76 (n=25)",
+        "abstention": "0.87 (26/30)",
+        "latency_p50_ms": 1.7,
+        "latency_p95_ms": 4.9
+      },
+      "dense": {
+        "questions": 30,
+        "recall_at_5": "0.92 (23/25)",
+        "precision_at_5": "0.34 (n=25)",
+        "mrr": "0.82 (n=25)",
+        "cve_recall_at_5": "0.83 (15/18)",
+        "host_precision": "0.85 (n=25)",
+        "host_recall": "0.92 (n=25)",
+        "abstention": "0.87 (26/30)",
+        "latency_p50_ms": 31.4,
+        "latency_p95_ms": 48.8
+      },
+      "hybrid": {
+        "questions": 30,
+        "recall_at_5": "0.88 (22/25)",
+        "precision_at_5": "0.31 (n=25)",
+        "mrr": "0.82 (n=25)",
+        "cve_recall_at_5": "0.83 (15/18)",
+        "host_precision": "0.81 (n=25)",
+        "host_recall": "0.81 (n=25)",
+        "abstention": "0.87 (26/30)",
+        "latency_p50_ms": 40.9,
+        "latency_p95_ms": 91.4
+      },
+      "hybrid+rerank": {
+        "questions": 30,
+        "recall_at_5": "0.88 (22/25)",
+        "precision_at_5": "0.32 (n=25)",
+        "mrr": "0.85 (n=25)",
+        "cve_recall_at_5": "0.83 (15/18)",
+        "host_precision": "0.81 (n=25)",
+        "host_recall": "0.80 (n=25)",
+        "abstention": "0.87 (26/30)",
+        "latency_p50_ms": 43.5,
+        "latency_p95_ms": 486.9
+      }
+    }
+  },
+  "questions": {
+    "bm25": [
+      {
+        "question_id": "ident-01",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "731830"
+        ],
+        "matched_qids": [
+          "731830"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.33
+      },
+      {
+        "question_id": "ident-02",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "38657"
+        ],
+        "matched_qids": [
+          "38657"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.13
+      },
+      {
+        "question_id": "ident-03",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "203845"
+        ],
+        "matched_qids": [
+          "203845"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 4.45
+      },
+      {
+        "question_id": "ident-04",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "203845"
+        ],
+        "matched_qids": [
+          "203845"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 3.13
+      },
+      {
+        "question_id": "ident-05",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "38913"
+        ],
+        "matched_qids": [
+          "38913"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.1
+      },
+      {
+        "question_id": "ident-06",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "38919"
+        ],
+        "matched_qids": [
+          "38919"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.07
+      },
+      {
+        "question_id": "ident-07",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "42046"
+        ],
+        "matched_qids": [
+          "42046"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.13
+      },
+      {
+        "question_id": "ident-08",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "86476"
+        ],
+        "matched_qids": [
+          "86476"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.05
+      },
+      {
+        "question_id": "ident-09",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "82054",
+          "125001"
+        ],
+        "matched_qids": [
+          "82054",
+          "125001"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.18
+      },
+      {
+        "question_id": "ident-10",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "105936",
+          "38901"
+        ],
+        "matched_qids": [
+          "105936",
+          "38901"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.14
+      },
+      {
+        "question_id": "para-01",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "42046",
+          "200621",
+          "731517",
+          "38913",
+          "203845",
+          "200649"
+        ],
+        "matched_qids": [
+          "42046"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 4.71
+      },
+      {
+        "question_id": "para-02",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38903",
+          "730403",
+          "38919",
+          "38913",
+          "203845",
+          "731355"
+        ],
+        "matched_qids": [
+          "38903"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 0.3333333333333333,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 0.03519061583577713,
+        "abstained_correctly": true,
+        "latency_ms": 2.25
+      },
+      {
+        "question_id": "para-03",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "105936",
+          "38915",
+          "38901",
+          "38902",
+          "203848",
+          "200519"
+        ],
+        "matched_qids": [
+          "105936"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 0.5,
+        "cve_recall": 1.0,
+        "host_precision": 0.0,
+        "host_recall": 0.0,
+        "abstained_correctly": true,
+        "latency_ms": 1.88
+      },
+      {
+        "question_id": "para-04",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38915",
+          "38903",
+          "38904",
+          "38901",
+          "38913",
+          "38896"
+        ],
+        "matched_qids": [
+          "38915"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 0.25,
+        "cve_recall": 0.0,
+        "host_precision": 1.0,
+        "host_recall": 0.008823529411764706,
+        "abstained_correctly": true,
+        "latency_ms": 0.94
+      },
+      {
+        "question_id": "para-05",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "730529",
+          "731513",
+          "731830",
+          "731613",
+          "731520",
+          "731355"
+        ],
+        "matched_qids": [
+          "730529"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 1.66
+      },
+      {
+        "question_id": "para-06",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "730758",
+          "731613",
+          "731520",
+          "731514",
+          "731521"
+        ],
+        "matched_qids": [
+          "730758"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 1.6
+      },
+      {
+        "question_id": "para-07",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "731517",
+          "730403",
+          "731513",
+          "731520",
+          "731521",
+          "203845"
+        ],
+        "matched_qids": [
+          "731517"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 1.73
+      },
+      {
+        "question_id": "para-08",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "731830",
+          "731513",
+          "730529",
+          "730758",
+          "731613"
+        ],
+        "matched_qids": [
+          "731830"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 1.81
+      },
+      {
+        "question_id": "para-09",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38657",
+          "82054",
+          "200519",
+          "38913",
+          "38902",
+          "203845"
+        ],
+        "matched_qids": [
+          "38657"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 1.31
+      },
+      {
+        "question_id": "para-10",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200519",
+          "82054",
+          "203845",
+          "200649",
+          "200621",
+          "731613"
+        ],
+        "matched_qids": [
+          "200519"
+        ],
+        "top_score": null,
+        "recall": 0.0,
+        "precision": 0.0,
+        "reciprocal_rank": 0.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 0.03003003003003003,
+        "abstained_correctly": true,
+        "latency_ms": 4.46
+      },
+      {
+        "question_id": "para-11",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203847",
+          "38913",
+          "200519",
+          "730758",
+          "200547",
+          "203845",
+          "202719",
+          "105936"
+        ],
+        "matched_qids": [
+          "203847"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 1.62
+      },
+      {
+        "question_id": "para-12",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203848",
+          "200560",
+          "202719",
+          "38904",
+          "200546",
+          "200547"
+        ],
+        "matched_qids": [
+          "203848"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 0.5,
+        "cve_recall": 0.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 1.62
+      },
+      {
+        "question_id": "para-13",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203845",
+          "200560",
+          "200519"
+        ],
+        "matched_qids": [
+          "203845"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 4.8
+      },
+      {
+        "question_id": "para-14",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203845",
+          "202736",
+          "200519"
+        ],
+        "matched_qids": [
+          "203845"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 5.06
+      },
+      {
+        "question_id": "para-15",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200519",
+          "203845"
+        ],
+        "matched_qids": [
+          "200519"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.5,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 3.92
+      },
+      {
+        "question_id": "para-16",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200519",
+          "203845",
+          "200621"
+        ],
+        "matched_qids": [
+          "200519"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 3.77
+      },
+      {
+        "question_id": "para-17",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203845",
+          "200621",
+          "200519",
+          "38900",
+          "38903"
+        ],
+        "matched_qids": [
+          "203845"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 0.5,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 0.9,
+        "abstained_correctly": true,
+        "latency_ms": 5.29
+      },
+      {
+        "question_id": "para-18",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200546",
+          "6021317",
+          "203845",
+          "200639",
+          "115284",
+          "200621"
+        ],
+        "matched_qids": [
+          "200546"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 1.71
+      },
+      {
+        "question_id": "para-19",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200649",
+          "203845",
+          "200621",
+          "200519"
+        ],
+        "matched_qids": [
+          "200649"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.25,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 1.74
+      },
+      {
+        "question_id": "para-20",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "202736",
+          "203845",
+          "731513",
+          "200519",
+          "200621",
+          "731830"
+        ],
+        "matched_qids": [
+          "202736"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 1.94
+      },
+      {
+        "question_id": "prod-01",
+        "question_type": "product",
+        "ranked_qids": [
+          "38915",
+          "38919",
+          "38913",
+          "38896",
+          "38955",
+          "38905",
+          "105936"
+        ],
+        "matched_qids": [
+          "38915"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.8,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 0.008797653958944282,
+        "abstained_correctly": true,
+        "latency_ms": 0.42
+      },
+      {
+        "question_id": "prod-02",
+        "question_type": "product",
+        "ranked_qids": [
+          "731514",
+          "730529",
+          "731521"
+        ],
+        "matched_qids": [
+          "731514"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.74
+      },
+      {
+        "question_id": "prod-03",
+        "question_type": "product",
+        "ranked_qids": [
+          "38896",
+          "38900",
+          "38955",
+          "38915",
+          "38905",
+          "105936"
+        ],
+        "matched_qids": [
+          "38896"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 0.4,
+        "reciprocal_rank": 0.5,
+        "cve_recall": null,
+        "host_precision": 0.0,
+        "host_recall": 0.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.56
+      },
+      {
+        "question_id": "prod-04",
+        "question_type": "product",
+        "ranked_qids": [
+          "200519",
+          "200546",
+          "200621",
+          "200649",
+          "202736",
+          "203845",
+          "200547",
+          "200560"
+        ],
+        "matched_qids": [
+          "200519"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 3.02
+      },
+      {
+        "question_id": "prod-05",
+        "question_type": "product",
+        "ranked_qids": [
+          "200568",
+          "203847"
+        ],
+        "matched_qids": [
+          "200568"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.16
+      },
+      {
+        "question_id": "neg-01",
+        "question_type": "negative",
+        "ranked_qids": [],
+        "matched_qids": [],
+        "top_score": null,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": true,
+        "latency_ms": 0.02
+      },
+      {
+        "question_id": "neg-02",
+        "question_type": "negative",
+        "ranked_qids": [
+          "731355",
+          "731520",
+          "731521",
+          "730529",
+          "731517",
+          "731513",
+          "731514"
+        ],
+        "matched_qids": [
+          "731355"
+        ],
+        "top_score": null,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 0.83
+      },
+      {
+        "question_id": "neg-03",
+        "question_type": "negative",
+        "ranked_qids": [
+          "202719",
+          "731355",
+          "200630",
+          "38904",
+          "38657",
+          "730758",
+          "730403",
+          "200519"
+        ],
+        "matched_qids": [
+          "202719"
+        ],
+        "top_score": null,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 1.11
+      },
+      {
+        "question_id": "neg-04",
+        "question_type": "negative",
+        "ranked_qids": [
+          "38900",
+          "38903",
+          "38919",
+          "38902",
+          "38905",
+          "38915",
+          "38955"
+        ],
+        "matched_qids": [
+          "38900"
+        ],
+        "top_score": null,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 1.05
+      },
+      {
+        "question_id": "neg-05",
+        "question_type": "negative",
+        "ranked_qids": [
+          "202719",
+          "42046",
+          "38904",
+          "200630",
+          "203845"
+        ],
+        "matched_qids": [
+          "202719"
+        ],
+        "top_score": null,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 1.54
+      }
+    ],
+    "dense": [
+      {
+        "question_id": "ident-01",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "731830"
+        ],
+        "matched_qids": [
+          "731830"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.1
+      },
+      {
+        "question_id": "ident-02",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "38657"
+        ],
+        "matched_qids": [
+          "38657"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.13
+      },
+      {
+        "question_id": "ident-03",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "203845"
+        ],
+        "matched_qids": [
+          "203845"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 3.12
+      },
+      {
+        "question_id": "ident-04",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "203845"
+        ],
+        "matched_qids": [
+          "203845"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 2.89
+      },
+      {
+        "question_id": "ident-05",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "38913"
+        ],
+        "matched_qids": [
+          "38913"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.08
+      },
+      {
+        "question_id": "ident-06",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "38919"
+        ],
+        "matched_qids": [
+          "38919"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.05
+      },
+      {
+        "question_id": "ident-07",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "42046"
+        ],
+        "matched_qids": [
+          "42046"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.11
+      },
+      {
+        "question_id": "ident-08",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "86476"
+        ],
+        "matched_qids": [
+          "86476"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.05
+      },
+      {
+        "question_id": "ident-09",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "82054",
+          "125001"
+        ],
+        "matched_qids": [
+          "82054",
+          "125001"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.14
+      },
+      {
+        "question_id": "ident-10",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "105936",
+          "38901"
+        ],
+        "matched_qids": [
+          "105936",
+          "38901"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.17
+      },
+      {
+        "question_id": "para-01",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200519",
+          "200621",
+          "38913",
+          "203845",
+          "38955",
+          "731517"
+        ],
+        "matched_qids": [
+          "200519",
+          "200621",
+          "38913",
+          "203845",
+          "38955",
+          "731517"
+        ],
+        "top_score": 0.720699667930603,
+        "recall": 0.0,
+        "precision": 0.0,
+        "reciprocal_rank": 0.0,
+        "cve_recall": 0.0,
+        "host_precision": 0.0625,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 48.27
+      },
+      {
+        "question_id": "para-02",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38913",
+          "42046",
+          "203845",
+          "200621",
+          "105936",
+          "38955"
+        ],
+        "matched_qids": [
+          "38913",
+          "42046",
+          "203845",
+          "200621",
+          "105936",
+          "38955"
+        ],
+        "top_score": 0.745342493057251,
+        "recall": 0.0,
+        "precision": 0.0,
+        "reciprocal_rank": 0.0,
+        "cve_recall": null,
+        "host_precision": 0.9970414201183432,
+        "host_recall": 0.9882697947214076,
+        "abstained_correctly": true,
+        "latency_ms": 32.47
+      },
+      {
+        "question_id": "para-03",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38915",
+          "38904",
+          "38913",
+          "105936",
+          "38901",
+          "38903"
+        ],
+        "matched_qids": [
+          "38915",
+          "38904",
+          "38913",
+          "105936"
+        ],
+        "top_score": 0.7495332956314087,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.008849557522123894,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 37.82
+      },
+      {
+        "question_id": "para-04",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38904",
+          "38901",
+          "38913",
+          "38915",
+          "38896",
+          "38900",
+          "105936"
+        ],
+        "matched_qids": [
+          "38904",
+          "38901",
+          "38913",
+          "38915",
+          "38896",
+          "38900",
+          "105936"
+        ],
+        "top_score": 0.7729915380477905,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 0.5,
+        "cve_recall": 0.0,
+        "host_precision": 0.9970674486803519,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 25.31
+      },
+      {
+        "question_id": "para-05",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "730529",
+          "731830",
+          "731513",
+          "730758"
+        ],
+        "matched_qids": [
+          "730529",
+          "731830",
+          "731513",
+          "730758"
+        ],
+        "top_score": 0.7593522667884827,
+        "recall": 1.0,
+        "precision": 0.25,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.0030120481927710845,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 42.21
+      },
+      {
+        "question_id": "para-06",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "730758",
+          "731355",
+          "731613",
+          "731521"
+        ],
+        "matched_qids": [
+          "730758",
+          "731355",
+          "731613"
+        ],
+        "top_score": 0.7839287519454956,
+        "recall": 1.0,
+        "precision": 0.25,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 45.79
+      },
+      {
+        "question_id": "para-07",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "731517",
+          "730403",
+          "731513",
+          "731514"
+        ],
+        "matched_qids": [
+          "731517"
+        ],
+        "top_score": 0.8459720611572266,
+        "recall": 1.0,
+        "precision": 0.25,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 33.76
+      },
+      {
+        "question_id": "para-08",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "731830",
+          "730529",
+          "730758",
+          "731613",
+          "731520",
+          "731513"
+        ],
+        "matched_qids": [
+          "731830",
+          "730529"
+        ],
+        "top_score": 0.7726039886474609,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.9969879518072289,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 44.62
+      },
+      {
+        "question_id": "para-09",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38657",
+          "38913",
+          "203845",
+          "200621",
+          "82054"
+        ],
+        "matched_qids": [
+          "38657",
+          "38913"
+        ],
+        "top_score": 0.7745644450187683,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.6666666666666666,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 29.22
+      },
+      {
+        "question_id": "para-10",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "82054",
+          "115284",
+          "203845",
+          "200519",
+          "38913"
+        ],
+        "matched_qids": [
+          "82054",
+          "115284",
+          "203845",
+          "200519",
+          "38913"
+        ],
+        "top_score": 0.6797380447387695,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 0.5,
+        "cve_recall": null,
+        "host_precision": 0.985207100591716,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 22.6
+      },
+      {
+        "question_id": "para-11",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203847",
+          "200547",
+          "38904",
+          "38913",
+          "731355",
+          "105936",
+          "38901",
+          "731513",
+          "203845"
+        ],
+        "matched_qids": [
+          "203847"
+        ],
+        "top_score": 0.8043426275253296,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 52.14
+      },
+      {
+        "question_id": "para-12",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200560",
+          "200546",
+          "200621",
+          "200649",
+          "202736",
+          "203845",
+          "200572"
+        ],
+        "matched_qids": [
+          "200560"
+        ],
+        "top_score": 0.7369815111160278,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 45.52
+      },
+      {
+        "question_id": "para-13",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200519",
+          "203845"
+        ],
+        "matched_qids": [
+          "200519",
+          "203845"
+        ],
+        "top_score": 0.7803658843040466,
+        "recall": 1.0,
+        "precision": 0.5,
+        "reciprocal_rank": 0.5,
+        "cve_recall": 0.0,
+        "host_precision": 0.9,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 49.17
+      },
+      {
+        "question_id": "para-14",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203845",
+          "200519"
+        ],
+        "matched_qids": [
+          "203845",
+          "200519"
+        ],
+        "top_score": 0.769192636013031,
+        "recall": 1.0,
+        "precision": 0.5,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.9,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 40.24
+      },
+      {
+        "question_id": "para-15",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200519",
+          "200621",
+          "203845"
+        ],
+        "matched_qids": [
+          "200519"
+        ],
+        "top_score": 0.7714380621910095,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 35.05
+      },
+      {
+        "question_id": "para-16",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203845",
+          "200519",
+          "200621"
+        ],
+        "matched_qids": [
+          "203845",
+          "200519",
+          "200621"
+        ],
+        "top_score": 0.7546451091766357,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 0.5,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 39.01
+      },
+      {
+        "question_id": "para-17",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200621",
+          "200519",
+          "203845"
+        ],
+        "matched_qids": [
+          "200621"
+        ],
+        "top_score": 0.7823021411895752,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 30.42
+      },
+      {
+        "question_id": "para-18",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200546",
+          "200519",
+          "203845",
+          "200639",
+          "200649"
+        ],
+        "matched_qids": [
+          "200546"
+        ],
+        "top_score": 0.8213696479797363,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 29.66
+      },
+      {
+        "question_id": "para-19",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200519",
+          "200649",
+          "203845"
+        ],
+        "matched_qids": [
+          "200519",
+          "200649",
+          "203845"
+        ],
+        "top_score": 0.7774631381034851,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 0.5,
+        "cve_recall": 1.0,
+        "host_precision": 0.9,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 29.1
+      },
+      {
+        "question_id": "para-20",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "202736",
+          "203845",
+          "200519",
+          "200621"
+        ],
+        "matched_qids": [
+          "202736"
+        ],
+        "top_score": 0.858379602432251,
+        "recall": 1.0,
+        "precision": 0.25,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 43.05
+      },
+      {
+        "question_id": "prod-01",
+        "question_type": "product",
+        "ranked_qids": [
+          "38915",
+          "38903",
+          "38905",
+          "38901",
+          "38955",
+          "38904",
+          "38896",
+          "38900"
+        ],
+        "matched_qids": [
+          "38915",
+          "38903",
+          "38905",
+          "38901",
+          "38955",
+          "38904"
+        ],
+        "top_score": 0.7775433659553528,
+        "recall": 1.0,
+        "precision": 0.8,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 0.9230769230769231,
+        "host_recall": 0.03519061583577713,
+        "abstained_correctly": true,
+        "latency_ms": 9.03
+      },
+      {
+        "question_id": "prod-02",
+        "question_type": "product",
+        "ranked_qids": [
+          "731514",
+          "730529",
+          "730403",
+          "730758",
+          "731613",
+          "731521"
+        ],
+        "matched_qids": [
+          "731514",
+          "730529",
+          "730403",
+          "730758",
+          "731613",
+          "731521"
+        ],
+        "top_score": 0.7194034457206726,
+        "recall": 1.0,
+        "precision": 0.6,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 9.88
+      },
+      {
+        "question_id": "prod-03",
+        "question_type": "product",
+        "ranked_qids": [
+          "38903",
+          "38915",
+          "38902",
+          "38901",
+          "38896",
+          "38905",
+          "38955",
+          "38904"
+        ],
+        "matched_qids": [
+          "38903",
+          "38915",
+          "38902",
+          "38901",
+          "38896",
+          "38905",
+          "38955",
+          "38904"
+        ],
+        "top_score": 0.7688548564910889,
+        "recall": 1.0,
+        "precision": 0.6,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 0.8571428571428571,
+        "host_recall": 0.03529411764705882,
+        "abstained_correctly": true,
+        "latency_ms": 8.96
+      },
+      {
+        "question_id": "prod-04",
+        "question_type": "product",
+        "ranked_qids": [
+          "200519",
+          "200546",
+          "200621",
+          "200649",
+          "202736",
+          "203845",
+          "200572"
+        ],
+        "matched_qids": [
+          "200519"
+        ],
+        "top_score": 0.8728864192962646,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 11.85
+      },
+      {
+        "question_id": "prod-05",
+        "question_type": "product",
+        "ranked_qids": [
+          "200568",
+          "203847",
+          "203845",
+          "202719"
+        ],
+        "matched_qids": [
+          "200568"
+        ],
+        "top_score": 0.7264710664749146,
+        "recall": 1.0,
+        "precision": 0.5,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 7.96
+      },
+      {
+        "question_id": "neg-01",
+        "question_type": "negative",
+        "ranked_qids": [],
+        "matched_qids": [],
+        "top_score": null,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": true,
+        "latency_ms": 0.02
+      },
+      {
+        "question_id": "neg-02",
+        "question_type": "negative",
+        "ranked_qids": [
+          "731830",
+          "105936",
+          "38901",
+          "203845",
+          "38913",
+          "200568",
+          "731613",
+          "200560"
+        ],
+        "matched_qids": [
+          "731830",
+          "105936",
+          "38901",
+          "203845",
+          "38913",
+          "200568",
+          "731613",
+          "200560"
+        ],
+        "top_score": 0.673408031463623,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 26.45
+      },
+      {
+        "question_id": "neg-03",
+        "question_type": "negative",
+        "ranked_qids": [
+          "731355",
+          "38902",
+          "730403",
+          "731514",
+          "38913",
+          "200568",
+          "200621",
+          "731830"
+        ],
+        "matched_qids": [
+          "731355",
+          "38902",
+          "730403",
+          "731514",
+          "38913",
+          "200568",
+          "200621",
+          "731830"
+        ],
+        "top_score": 0.7184357047080994,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 26.72
+      },
+      {
+        "question_id": "neg-04",
+        "question_type": "negative",
+        "ranked_qids": [
+          "203845",
+          "200519",
+          "82054",
+          "200649",
+          "202736"
+        ],
+        "matched_qids": [
+          "203845",
+          "200519",
+          "82054",
+          "200649",
+          "202736"
+        ],
+        "top_score": 0.6844834089279175,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 29.32
+      },
+      {
+        "question_id": "neg-05",
+        "question_type": "negative",
+        "ranked_qids": [
+          "38904",
+          "38913",
+          "42046",
+          "200528",
+          "202719"
+        ],
+        "matched_qids": [
+          "38904",
+          "38913",
+          "42046",
+          "200528",
+          "202719"
+        ],
+        "top_score": 0.752251148223877,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 33.8
+      }
+    ],
+    "hybrid": [
+      {
+        "question_id": "ident-01",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "731830"
+        ],
+        "matched_qids": [
+          "731830"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.07
+      },
+      {
+        "question_id": "ident-02",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "38657"
+        ],
+        "matched_qids": [
+          "38657"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.12
+      },
+      {
+        "question_id": "ident-03",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "203845"
+        ],
+        "matched_qids": [
+          "203845"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 3.06
+      },
+      {
+        "question_id": "ident-04",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "203845"
+        ],
+        "matched_qids": [
+          "203845"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 2.89
+      },
+      {
+        "question_id": "ident-05",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "38913"
+        ],
+        "matched_qids": [
+          "38913"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.09
+      },
+      {
+        "question_id": "ident-06",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "38919"
+        ],
+        "matched_qids": [
+          "38919"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.06
+      },
+      {
+        "question_id": "ident-07",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "42046"
+        ],
+        "matched_qids": [
+          "42046"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.08
+      },
+      {
+        "question_id": "ident-08",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "86476"
+        ],
+        "matched_qids": [
+          "86476"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.05
+      },
+      {
+        "question_id": "ident-09",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "82054",
+          "125001"
+        ],
+        "matched_qids": [
+          "82054",
+          "125001"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.14
+      },
+      {
+        "question_id": "ident-10",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "105936",
+          "38901"
+        ],
+        "matched_qids": [
+          "105936",
+          "38901"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.12
+      },
+      {
+        "question_id": "para-01",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38913",
+          "731517",
+          "200621",
+          "203845",
+          "200519",
+          "42046"
+        ],
+        "matched_qids": [
+          "200519",
+          "200621",
+          "38913",
+          "203845",
+          "731517"
+        ],
+        "top_score": 0.720699667930603,
+        "recall": 0.0,
+        "precision": 0.0,
+        "reciprocal_rank": 0.16666666666666666,
+        "cve_recall": 0.0,
+        "host_precision": 0.0,
+        "host_recall": 0.0,
+        "abstained_correctly": true,
+        "latency_ms": 46.97
+      },
+      {
+        "question_id": "para-02",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38913",
+          "105936",
+          "38903",
+          "730403",
+          "42046",
+          "38919"
+        ],
+        "matched_qids": [
+          "38913",
+          "42046",
+          "105936",
+          "38903"
+        ],
+        "top_score": 0.745342493057251,
+        "recall": 0.0,
+        "precision": 0.0,
+        "reciprocal_rank": 0.16666666666666666,
+        "cve_recall": null,
+        "host_precision": 0.9970760233918129,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 30.09
+      },
+      {
+        "question_id": "para-03",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38915",
+          "105936",
+          "38901",
+          "38913",
+          "38903",
+          "38904"
+        ],
+        "matched_qids": [
+          "38915",
+          "38904",
+          "38913",
+          "105936"
+        ],
+        "top_score": 0.7495332956314087,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.008849557522123894,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 42.45
+      },
+      {
+        "question_id": "para-04",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38904",
+          "38915",
+          "38901",
+          "38913",
+          "38903",
+          "38896"
+        ],
+        "matched_qids": [
+          "38904",
+          "38901",
+          "38913",
+          "38915",
+          "38896",
+          "38903"
+        ],
+        "top_score": 0.7729915380477905,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 0.3333333333333333,
+        "cve_recall": 0.0,
+        "host_precision": 0.9230769230769231,
+        "host_recall": 0.03529411764705882,
+        "abstained_correctly": true,
+        "latency_ms": 26.24
+      },
+      {
+        "question_id": "para-05",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "730529",
+          "731830",
+          "731513",
+          "731521",
+          "731613",
+          "731520"
+        ],
+        "matched_qids": [
+          "730529",
+          "731830",
+          "731513"
+        ],
+        "top_score": 0.7593522667884827,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.0030120481927710845,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 46.51
+      },
+      {
+        "question_id": "para-06",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "730758",
+          "731613",
+          "731355",
+          "731521"
+        ],
+        "matched_qids": [
+          "730758",
+          "731355",
+          "731613"
+        ],
+        "top_score": 0.7839287519454956,
+        "recall": 1.0,
+        "precision": 0.25,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 46.72
+      },
+      {
+        "question_id": "para-07",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "731517",
+          "730403",
+          "731513",
+          "731514"
+        ],
+        "matched_qids": [
+          "731517"
+        ],
+        "top_score": 0.8459720611572266,
+        "recall": 1.0,
+        "precision": 0.25,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 35.87
+      },
+      {
+        "question_id": "para-08",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "731830",
+          "730529",
+          "731513",
+          "730758",
+          "731613"
+        ],
+        "matched_qids": [
+          "731830",
+          "730529"
+        ],
+        "top_score": 0.7726039886474609,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.9969879518072289,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 45.2
+      },
+      {
+        "question_id": "para-09",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38657",
+          "38913",
+          "82054",
+          "200519"
+        ],
+        "matched_qids": [
+          "38657",
+          "38913"
+        ],
+        "top_score": 0.7745644450187683,
+        "recall": 1.0,
+        "precision": 0.25,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.6666666666666666,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 35.51
+      },
+      {
+        "question_id": "para-10",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "82054",
+          "203845",
+          "200519",
+          "200649"
+        ],
+        "matched_qids": [
+          "82054",
+          "203845",
+          "200519"
+        ],
+        "top_score": 0.6797380447387695,
+        "recall": 0.0,
+        "precision": 0.0,
+        "reciprocal_rank": 0.0,
+        "cve_recall": null,
+        "host_precision": 0.9090909090909091,
+        "host_recall": 0.03003003003003003,
+        "abstained_correctly": true,
+        "latency_ms": 24.02
+      },
+      {
+        "question_id": "para-11",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203847",
+          "38913",
+          "200547",
+          "731613",
+          "105936",
+          "38900",
+          "38904"
+        ],
+        "matched_qids": [
+          "203847"
+        ],
+        "top_score": 0.8043426275253296,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 45.96
+      },
+      {
+        "question_id": "para-12",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200546",
+          "200560",
+          "200621",
+          "200649",
+          "200572",
+          "202719",
+          "202736",
+          "200547"
+        ],
+        "matched_qids": [
+          "200560",
+          "200546",
+          "200621",
+          "200649",
+          "202736",
+          "200572",
+          "200547",
+          "202719"
+        ],
+        "top_score": 0.6816201210021973,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 0.5,
+        "cve_recall": 0.0,
+        "host_precision": 0.1,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 133.63
+      },
+      {
+        "question_id": "para-13",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203845",
+          "200519",
+          "202727"
+        ],
+        "matched_qids": [
+          "200519",
+          "203845"
+        ],
+        "top_score": 0.7803658843040466,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.9,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 84.16
+      },
+      {
+        "question_id": "para-14",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203845",
+          "202736",
+          "200519"
+        ],
+        "matched_qids": [
+          "203845"
+        ],
+        "top_score": 0.769192636013031,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 59.13
+      },
+      {
+        "question_id": "para-15",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200519",
+          "203845",
+          "200621"
+        ],
+        "matched_qids": [
+          "200519"
+        ],
+        "top_score": 0.7714380621910095,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 45.44
+      },
+      {
+        "question_id": "para-16",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200519",
+          "203845",
+          "200621"
+        ],
+        "matched_qids": [
+          "203845",
+          "200519",
+          "200621"
+        ],
+        "top_score": 0.7546451091766357,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 69.06
+      },
+      {
+        "question_id": "para-17",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200621",
+          "200519",
+          "203845"
+        ],
+        "matched_qids": [
+          "200621"
+        ],
+        "top_score": 0.7823021411895752,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 48.14
+      },
+      {
+        "question_id": "para-18",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200546",
+          "203845",
+          "6021317",
+          "200519",
+          "200639"
+        ],
+        "matched_qids": [
+          "200546"
+        ],
+        "top_score": 0.8213696479797363,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 42.04
+      },
+      {
+        "question_id": "para-19",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200649",
+          "200546",
+          "200519",
+          "203845",
+          "200621"
+        ],
+        "matched_qids": [
+          "200519",
+          "200649",
+          "203845",
+          "200546"
+        ],
+        "top_score": 0.7774631381034851,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.9,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 45.42
+      },
+      {
+        "question_id": "para-20",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "202736",
+          "203845",
+          "200519"
+        ],
+        "matched_qids": [
+          "202736"
+        ],
+        "top_score": 0.858379602432251,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 97.32
+      },
+      {
+        "question_id": "prod-01",
+        "question_type": "product",
+        "ranked_qids": [
+          "38915",
+          "38905",
+          "38955",
+          "38896",
+          "38903",
+          "38901",
+          "38919"
+        ],
+        "matched_qids": [
+          "38915",
+          "38903",
+          "38905",
+          "38901",
+          "38955"
+        ],
+        "top_score": 0.7775433659553528,
+        "recall": 1.0,
+        "precision": 0.8,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 0.9230769230769231,
+        "host_recall": 0.03519061583577713,
+        "abstained_correctly": true,
+        "latency_ms": 9.31
+      },
+      {
+        "question_id": "prod-02",
+        "question_type": "product",
+        "ranked_qids": [
+          "730529",
+          "731514",
+          "730403",
+          "731521",
+          "731613"
+        ],
+        "matched_qids": [
+          "731514",
+          "730529",
+          "730403",
+          "731613",
+          "731521"
+        ],
+        "top_score": 0.7194034457206726,
+        "recall": 1.0,
+        "precision": 0.8,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 10.14
+      },
+      {
+        "question_id": "prod-03",
+        "question_type": "product",
+        "ranked_qids": [
+          "38896",
+          "38915",
+          "38903",
+          "38955",
+          "38900",
+          "38901",
+          "38905"
+        ],
+        "matched_qids": [
+          "38903",
+          "38915",
+          "38901",
+          "38896",
+          "38905",
+          "38955",
+          "38900"
+        ],
+        "top_score": 0.7688548564910889,
+        "recall": 1.0,
+        "precision": 0.4,
+        "reciprocal_rank": 0.3333333333333333,
+        "cve_recall": null,
+        "host_precision": 0.8571428571428571,
+        "host_recall": 0.03529411764705882,
+        "abstained_correctly": true,
+        "latency_ms": 8.63
+      },
+      {
+        "question_id": "prod-04",
+        "question_type": "product",
+        "ranked_qids": [
+          "200519",
+          "200546",
+          "200621",
+          "200649",
+          "202736",
+          "203845",
+          "200572",
+          "200639"
+        ],
+        "matched_qids": [
+          "200519"
+        ],
+        "top_score": 0.8728864192962646,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 12.05
+      },
+      {
+        "question_id": "prod-05",
+        "question_type": "product",
+        "ranked_qids": [
+          "200568",
+          "203847",
+          "203845",
+          "202719"
+        ],
+        "matched_qids": [
+          "200568"
+        ],
+        "top_score": 0.7264710664749146,
+        "recall": 1.0,
+        "precision": 0.5,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 8.08
+      },
+      {
+        "question_id": "neg-01",
+        "question_type": "negative",
+        "ranked_qids": [],
+        "matched_qids": [],
+        "top_score": null,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": true,
+        "latency_ms": 0.02
+      },
+      {
+        "question_id": "neg-02",
+        "question_type": "negative",
+        "ranked_qids": [
+          "105936",
+          "38901",
+          "38913",
+          "731613",
+          "200572",
+          "202719",
+          "731355",
+          "731830"
+        ],
+        "matched_qids": [
+          "731830",
+          "105936",
+          "38901",
+          "38913",
+          "200572",
+          "202719",
+          "731613"
+        ],
+        "top_score": 0.673408031463623,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 24.54
+      },
+      {
+        "question_id": "neg-03",
+        "question_type": "negative",
+        "ranked_qids": [
+          "731355",
+          "731517",
+          "38913",
+          "731521",
+          "730758",
+          "202719",
+          "38902"
+        ],
+        "matched_qids": [
+          "731355",
+          "38902",
+          "38913",
+          "731517",
+          "731521",
+          "730758"
+        ],
+        "top_score": 0.7184357047080994,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 34.31
+      },
+      {
+        "question_id": "neg-04",
+        "question_type": "negative",
+        "ranked_qids": [
+          "200519",
+          "82054",
+          "200572",
+          "730403",
+          "38900",
+          "203845",
+          "38903"
+        ],
+        "matched_qids": [
+          "203845",
+          "200519",
+          "82054",
+          "200572",
+          "730403"
+        ],
+        "top_score": 0.6844834089279175,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 34.68
+      },
+      {
+        "question_id": "neg-05",
+        "question_type": "negative",
+        "ranked_qids": [
+          "42046",
+          "38904",
+          "202719",
+          "38913",
+          "200630"
+        ],
+        "matched_qids": [
+          "38904",
+          "42046",
+          "202719",
+          "38913"
+        ],
+        "top_score": 0.752251148223877,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 39.7
+      }
+    ],
+    "hybrid+rerank": [
+      {
+        "question_id": "ident-01",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "731830"
+        ],
+        "matched_qids": [
+          "731830"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.11
+      },
+      {
+        "question_id": "ident-02",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "38657"
+        ],
+        "matched_qids": [
+          "38657"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.14
+      },
+      {
+        "question_id": "ident-03",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "203845"
+        ],
+        "matched_qids": [
+          "203845"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 3.16
+      },
+      {
+        "question_id": "ident-04",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "203845"
+        ],
+        "matched_qids": [
+          "203845"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 3.05
+      },
+      {
+        "question_id": "ident-05",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "38913"
+        ],
+        "matched_qids": [
+          "38913"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.09
+      },
+      {
+        "question_id": "ident-06",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "38919"
+        ],
+        "matched_qids": [
+          "38919"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.05
+      },
+      {
+        "question_id": "ident-07",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "42046"
+        ],
+        "matched_qids": [
+          "42046"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.16
+      },
+      {
+        "question_id": "ident-08",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "86476"
+        ],
+        "matched_qids": [
+          "86476"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.06
+      },
+      {
+        "question_id": "ident-09",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "82054",
+          "125001"
+        ],
+        "matched_qids": [
+          "82054",
+          "125001"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.16
+      },
+      {
+        "question_id": "ident-10",
+        "question_type": "identifier",
+        "ranked_qids": [
+          "105936",
+          "38901"
+        ],
+        "matched_qids": [
+          "105936",
+          "38901"
+        ],
+        "top_score": null,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 0.15
+      },
+      {
+        "question_id": "para-01",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38913",
+          "731517",
+          "200621",
+          "203845",
+          "200519",
+          "42046"
+        ],
+        "matched_qids": [
+          "200519",
+          "200621",
+          "38913",
+          "203845",
+          "731517"
+        ],
+        "top_score": 0.720699667930603,
+        "recall": 0.0,
+        "precision": 0.0,
+        "reciprocal_rank": 0.16666666666666666,
+        "cve_recall": 0.0,
+        "host_precision": 0.0,
+        "host_recall": 0.0,
+        "abstained_correctly": true,
+        "latency_ms": 65.48
+      },
+      {
+        "question_id": "para-02",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38913",
+          "105936",
+          "38903",
+          "730403",
+          "42046",
+          "38919"
+        ],
+        "matched_qids": [
+          "38913",
+          "42046",
+          "105936",
+          "38903"
+        ],
+        "top_score": 0.745342493057251,
+        "recall": 0.0,
+        "precision": 0.0,
+        "reciprocal_rank": 0.16666666666666666,
+        "cve_recall": null,
+        "host_precision": 0.9970760233918129,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 33.29
+      },
+      {
+        "question_id": "para-03",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38915",
+          "105936",
+          "38901",
+          "38913",
+          "38903",
+          "38904"
+        ],
+        "matched_qids": [
+          "38915",
+          "38904",
+          "38913",
+          "105936"
+        ],
+        "top_score": 0.7495332956314087,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.008849557522123894,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 50.06
+      },
+      {
+        "question_id": "para-04",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38904",
+          "38915",
+          "38901",
+          "38913",
+          "38903",
+          "38896"
+        ],
+        "matched_qids": [
+          "38904",
+          "38901",
+          "38913",
+          "38915",
+          "38896",
+          "38903"
+        ],
+        "top_score": 0.7729915380477905,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 0.3333333333333333,
+        "cve_recall": 0.0,
+        "host_precision": 0.9230769230769231,
+        "host_recall": 0.03529411764705882,
+        "abstained_correctly": true,
+        "latency_ms": 28.58
+      },
+      {
+        "question_id": "para-05",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "730529",
+          "731830",
+          "731513",
+          "731521",
+          "731613",
+          "731520"
+        ],
+        "matched_qids": [
+          "730529",
+          "731830",
+          "731513"
+        ],
+        "top_score": 0.7593522667884827,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.0030120481927710845,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 47.29
+      },
+      {
+        "question_id": "para-06",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "730758",
+          "731613",
+          "731355",
+          "731521"
+        ],
+        "matched_qids": [
+          "730758",
+          "731355",
+          "731613"
+        ],
+        "top_score": 0.7839287519454956,
+        "recall": 1.0,
+        "precision": 0.25,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 53.19
+      },
+      {
+        "question_id": "para-07",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "731517",
+          "730403",
+          "731513",
+          "731514"
+        ],
+        "matched_qids": [
+          "731517"
+        ],
+        "top_score": 0.8459720611572266,
+        "recall": 1.0,
+        "precision": 0.25,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 41.31
+      },
+      {
+        "question_id": "para-08",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "731830",
+          "730529",
+          "731513",
+          "730758",
+          "731613"
+        ],
+        "matched_qids": [
+          "731830",
+          "730529"
+        ],
+        "top_score": 0.7726039886474609,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.9969879518072289,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 49.89
+      },
+      {
+        "question_id": "para-09",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "38657",
+          "38913",
+          "82054",
+          "200519"
+        ],
+        "matched_qids": [
+          "38657",
+          "38913"
+        ],
+        "top_score": 0.7745644450187683,
+        "recall": 1.0,
+        "precision": 0.25,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.6666666666666666,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 31.5
+      },
+      {
+        "question_id": "para-10",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "82054",
+          "203845",
+          "200519",
+          "200649"
+        ],
+        "matched_qids": [
+          "82054",
+          "203845",
+          "200519"
+        ],
+        "top_score": 0.6797380447387695,
+        "recall": 0.0,
+        "precision": 0.0,
+        "reciprocal_rank": 0.0,
+        "cve_recall": null,
+        "host_precision": 0.9090909090909091,
+        "host_recall": 0.03003003003003003,
+        "abstained_correctly": true,
+        "latency_ms": 25.0
+      },
+      {
+        "question_id": "para-11",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203847",
+          "38913",
+          "200547",
+          "731613",
+          "105936",
+          "38900",
+          "38904"
+        ],
+        "matched_qids": [
+          "203847"
+        ],
+        "top_score": 0.8043426275253296,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 44.18
+      },
+      {
+        "question_id": "para-12",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200546",
+          "200560",
+          "200621",
+          "200649",
+          "200572",
+          "202719",
+          "202736",
+          "200547"
+        ],
+        "matched_qids": [
+          "200560",
+          "200546",
+          "200621",
+          "200649",
+          "202736",
+          "200572",
+          "200547",
+          "202719"
+        ],
+        "top_score": 0.6816201210021973,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 0.5,
+        "cve_recall": 0.0,
+        "host_precision": 0.1,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 52.78
+      },
+      {
+        "question_id": "para-13",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203845",
+          "200519",
+          "202727"
+        ],
+        "matched_qids": [
+          "200519",
+          "203845"
+        ],
+        "top_score": 0.7803658843040466,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.9,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 58.59
+      },
+      {
+        "question_id": "para-14",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "203845",
+          "202736",
+          "200519"
+        ],
+        "matched_qids": [
+          "203845"
+        ],
+        "top_score": 0.769192636013031,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 44.94
+      },
+      {
+        "question_id": "para-15",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200519",
+          "203845",
+          "200621"
+        ],
+        "matched_qids": [
+          "200519"
+        ],
+        "top_score": 0.7714380621910095,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 37.55
+      },
+      {
+        "question_id": "para-16",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200519",
+          "203845",
+          "200621"
+        ],
+        "matched_qids": [
+          "203845",
+          "200519",
+          "200621"
+        ],
+        "top_score": 0.7546451091766357,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 42.76
+      },
+      {
+        "question_id": "para-17",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200621",
+          "200519",
+          "203845"
+        ],
+        "matched_qids": [
+          "200621"
+        ],
+        "top_score": 0.7823021411895752,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 33.95
+      },
+      {
+        "question_id": "para-18",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200546",
+          "203845",
+          "6021317",
+          "200519",
+          "200639"
+        ],
+        "matched_qids": [
+          "200546"
+        ],
+        "top_score": 0.8213696479797363,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 35.55
+      },
+      {
+        "question_id": "para-19",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "200649",
+          "200546",
+          "200519",
+          "203845",
+          "200621"
+        ],
+        "matched_qids": [
+          "200519",
+          "200649",
+          "203845",
+          "200546"
+        ],
+        "top_score": 0.7774631381034851,
+        "recall": 1.0,
+        "precision": 0.2,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 0.9,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 34.1
+      },
+      {
+        "question_id": "para-20",
+        "question_type": "paraphrase",
+        "ranked_qids": [
+          "202736",
+          "203845",
+          "200519"
+        ],
+        "matched_qids": [
+          "202736"
+        ],
+        "top_score": 0.858379602432251,
+        "recall": 1.0,
+        "precision": 0.3333333333333333,
+        "reciprocal_rank": 1.0,
+        "cve_recall": 1.0,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 44.95
+      },
+      {
+        "question_id": "prod-01",
+        "question_type": "product",
+        "ranked_qids": [
+          "38915",
+          "38896",
+          "38955",
+          "38905",
+          "38902",
+          "38903"
+        ],
+        "matched_qids": [
+          "38915"
+        ],
+        "top_score": 6.051225662231445,
+        "recall": 1.0,
+        "precision": 0.8,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 0.008797653958944282,
+        "abstained_correctly": true,
+        "latency_ms": 506.52
+      },
+      {
+        "question_id": "prod-02",
+        "question_type": "product",
+        "ranked_qids": [
+          "731514",
+          "730529",
+          "730403",
+          "731613"
+        ],
+        "matched_qids": [
+          "731514",
+          "730529"
+        ],
+        "top_score": 8.722753524780273,
+        "recall": 1.0,
+        "precision": 0.75,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 451.4
+      },
+      {
+        "question_id": "prod-03",
+        "question_type": "product",
+        "ranked_qids": [
+          "38903",
+          "38896",
+          "38955",
+          "38902",
+          "38900",
+          "38901"
+        ],
+        "matched_qids": [
+          "38903",
+          "38896"
+        ],
+        "top_score": 3.948032855987549,
+        "recall": 1.0,
+        "precision": 0.6,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 0.9230769230769231,
+        "host_recall": 0.03529411764705882,
+        "abstained_correctly": true,
+        "latency_ms": 472.18
+      },
+      {
+        "question_id": "prod-04",
+        "question_type": "product",
+        "ranked_qids": [
+          "200546",
+          "200621",
+          "200649",
+          "202736",
+          "203845",
+          "200519",
+          "202727",
+          "200560"
+        ],
+        "matched_qids": [
+          "200546",
+          "200621",
+          "200649",
+          "202736",
+          "203845",
+          "200519"
+        ],
+        "top_score": 8.688151359558105,
+        "recall": 1.0,
+        "precision": 1.0,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 288.47
+      },
+      {
+        "question_id": "prod-05",
+        "question_type": "product",
+        "ranked_qids": [
+          "200568",
+          "203847",
+          "203845",
+          "202727",
+          "731830"
+        ],
+        "matched_qids": [
+          "200568"
+        ],
+        "top_score": 4.292396545410156,
+        "recall": 1.0,
+        "precision": 0.4,
+        "reciprocal_rank": 1.0,
+        "cve_recall": null,
+        "host_precision": 1.0,
+        "host_recall": 1.0,
+        "abstained_correctly": true,
+        "latency_ms": 498.89
+      },
+      {
+        "question_id": "neg-01",
+        "question_type": "negative",
+        "ranked_qids": [],
+        "matched_qids": [],
+        "top_score": null,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": true,
+        "latency_ms": 0.02
+      },
+      {
+        "question_id": "neg-02",
+        "question_type": "negative",
+        "ranked_qids": [
+          "105936",
+          "38901",
+          "38913",
+          "731613",
+          "200572",
+          "202719",
+          "731355",
+          "731830"
+        ],
+        "matched_qids": [
+          "731830",
+          "105936",
+          "38901",
+          "38913",
+          "200572",
+          "202719",
+          "731613"
+        ],
+        "top_score": 0.673408031463623,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 38.95
+      },
+      {
+        "question_id": "neg-03",
+        "question_type": "negative",
+        "ranked_qids": [
+          "731355",
+          "731517",
+          "38913",
+          "731521",
+          "730758",
+          "202719",
+          "38902"
+        ],
+        "matched_qids": [
+          "731355",
+          "38902",
+          "38913",
+          "731517",
+          "731521",
+          "730758"
+        ],
+        "top_score": 0.7184357047080994,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 25.88
+      },
+      {
+        "question_id": "neg-04",
+        "question_type": "negative",
+        "ranked_qids": [
+          "200519",
+          "82054",
+          "200572",
+          "730403",
+          "38900",
+          "203845",
+          "38903"
+        ],
+        "matched_qids": [
+          "203845",
+          "200519",
+          "82054",
+          "200572",
+          "730403"
+        ],
+        "top_score": 0.6844834089279175,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 31.69
+      },
+      {
+        "question_id": "neg-05",
+        "question_type": "negative",
+        "ranked_qids": [
+          "42046",
+          "38904",
+          "202719",
+          "38913",
+          "200630"
+        ],
+        "matched_qids": [
+          "38904",
+          "42046",
+          "202719",
+          "38913"
+        ],
+        "top_score": 0.752251148223877,
+        "recall": null,
+        "precision": null,
+        "reciprocal_rank": null,
+        "cve_recall": null,
+        "host_precision": null,
+        "host_recall": null,
+        "abstained_correctly": false,
+        "latency_ms": 35.12
+      }
+    ]
+  }
+}
