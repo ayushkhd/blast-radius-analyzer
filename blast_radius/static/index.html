@@ -1,0 +1,174 @@
+<!doctype html>
+<!--
+  Blast Radius: the analyst-facing page.
+
+  This file is static structure only. It is served under a strict
+  Content-Security-Policy, so it carries no inline script, no inline style
+  and no event-handler attributes, and it loads exactly two same-origin
+  files. Everything that comes from the API is rendered by app.js as text.
+-->
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <title>Blast Radius</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script type="module" src="/static/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#results">Skip to results</a>
+
+  <header class="masthead">
+    <div class="frame masthead-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <h1 class="wordmark">Blast Radius</h1>
+        <p class="tagline">Which hosts are affected, which to fix first, and
+          what the data says to do.</p>
+      </div>
+      <p id="service-status" class="status-pill" role="status"
+         aria-live="polite" data-state="checking">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-text">Checking the service…</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="frame">
+    <section class="report-section ask" aria-labelledby="ask-heading">
+      <div class="rail">
+        <h2 id="ask-heading" class="rail-title">Query</h2>
+        <p id="query-help" class="rail-meta">A CVE id, a scanner check written
+          as <code>QID 12345</code>, or the text of an advisory.</p>
+      </div>
+      <div class="section-body">
+        <form id="ask-form" class="ask-form" novalidate>
+          <label class="ask-label" for="query">Vulnerability to look up</label>
+          <textarea id="query" name="query" class="ask-input" rows="3"
+                    spellcheck="false" autocomplete="off" autocapitalize="off"
+                    aria-describedby="query-help query-feedback"
+                    placeholder="CVE-2023-48795, QID 38913, or paste an advisory"></textarea>
+          <div class="ask-row">
+            <p id="query-feedback" class="ask-feedback" aria-live="polite"></p>
+            <div class="ask-actions">
+              <button type="button" id="cancel" class="button button-quiet"
+                      hidden>Cancel</button>
+              <button type="submit" id="analyse" class="button button-primary">
+                <span class="button-label">Analyse</span>
+                <span class="button-hint" aria-hidden="true"><kbd id="submit-modifier">Ctrl</kbd><kbd>Enter</kbd></span>
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="examples">
+          <p id="examples-label" class="examples-label">Try</p>
+          <ul class="example-list" aria-labelledby="examples-label">
+            <li><button type="button" class="example-chip" data-example="OpenSSH auth bypass, affects versions up to 9.6">OpenSSH auth bypass, affects versions up to 9.6</button></li>
+            <li><button type="button" class="example-chip" data-example="CVE-2023-48795">CVE-2023-48795</button></li>
+            <li><button type="button" class="example-chip" data-example="QID 38913">QID 38913</button></li>
+            <li><button type="button" class="example-chip" data-example="CVE-2021-44228">CVE-2021-44228</button></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <p id="announcer" class="visually-hidden" role="status"
+       aria-live="polite"></p>
+
+    <div id="results" class="results" tabindex="-1"></div>
+
+    <noscript>
+      <p class="callout callout-error">This page needs JavaScript to query
+        the service.</p>
+    </noscript>
+  </main>
+
+  <footer class="colophon">
+    <div class="frame">
+      <p>Advisory and read-only. Hosts, counts and ordering are computed from
+        the scanner's own detections. A language model, when one is
+        configured, writes only the prose, and every quote is checked against
+        its source before it is shown.</p>
+    </div>
+  </footer>
+
+  <aside id="drawer" class="drawer" role="dialog" aria-modal="false"
+         aria-labelledby="drawer-title" hidden>
+    <header class="drawer-head">
+      <div class="drawer-heading">
+        <p id="drawer-kicker" class="drawer-kicker"></p>
+        <h2 id="drawer-title" class="drawer-title" tabindex="-1"></h2>
+      </div>
+      <button type="button" id="drawer-close" class="button button-quiet">
+        Close <kbd aria-hidden="true">Esc</kbd>
+      </button>
+    </header>
+    <div id="drawer-body" class="drawer-body"></div>
+  </aside>
+
+  <!-- Shown before the first query, and again if a first query is cancelled. -->
+  <template id="empty-template">
+    <section class="report-section" aria-labelledby="start-heading">
+      <div class="rail">
+        <h2 id="start-heading" class="rail-title">Three ways in</h2>
+      </div>
+      <div class="section-body">
+        <ol class="ways">
+          <li class="way">
+            <h3 class="way-title">A new advisory arrives</h3>
+            <p>Paste its text. The product and version are extracted, the
+              vulnerability write-ups are searched, and the affected hosts are
+              resolved from the scanner's detections.</p>
+          </li>
+          <li class="way">
+            <h3 class="way-title">A known identifier</h3>
+            <p>Enter a CVE id or a QID. Identifiers are looked up directly: no
+              search runs, and no language model is needed.</p>
+          </li>
+          <li class="way">
+            <h3 class="way-title">Not in the environment</h3>
+            <p>When nothing matches, the answer says so, and says what the
+              data cannot rule out.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </template>
+
+  <!-- The outline of a response, shown while one is being computed. -->
+  <template id="skeleton-template">
+    <div class="report-section">
+      <div class="rail">
+        <h2 class="rail-title">Analysing</h2>
+      </div>
+      <div class="section-body">
+        <p class="loading-note">Search, host resolution and ranking take a
+          moment. A written brief can take a little longer.</p>
+        <div class="skeleton" aria-hidden="true">
+          <span class="bone bone-title"></span>
+          <span class="bone bone-line"></span>
+          <span class="bone bone-line bone-short"></span>
+          <span class="bone bone-block"></span>
+        </div>
+      </div>
+    </div>
+    <div class="report-section" aria-hidden="true">
+      <div class="rail"><span class="bone bone-label"></span></div>
+      <div class="section-body skeleton">
+        <div class="bone-stats">
+          <span class="bone bone-stat"></span>
+          <span class="bone bone-stat"></span>
+          <span class="bone bone-stat"></span>
+          <span class="bone bone-stat"></span>
+        </div>
+        <span class="bone bone-row"></span>
+        <span class="bone bone-row"></span>
+        <span class="bone bone-row"></span>
+        <span class="bone bone-row"></span>
+      </div>
+    </div>
+  </template>
+</body>
+</html>
