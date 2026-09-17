@@ -1,0 +1,30 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Scanner exports: too large for git, and they describe a real environment.
+# See "Getting the data" in the README.
+/data
+
+# Built index artifacts and downloaded models
+artifacts/
+.cache/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# Type-checker, linter and test caches
+.mypy_cache/
+.pytest_cache/
+.coverage
+
+# OS and editors
+.DS_Store
+.idea/
+.vscode/
