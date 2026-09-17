@@ -2,6 +2,7 @@
 name = "blast-radius-analyzer"
 version = "0.1.0"
 description = "Retrieval-augmented blast-radius analysis for vulnerabilities: which hosts are affected, which to fix first, and what the data says to do."
+readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
   "fastapi>=0.115",
