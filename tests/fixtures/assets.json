@@ -1,0 +1,1388 @@
+[
+  {
+    "id": "900000001",
+    "name": "fx-bastion",
+    "created": "2098-11-05T12:00:00Z",
+    "modified": "2099-03-02T00:00:00Z",
+    "type": "HOST",
+    "tags": [
+      {
+        "id": "70000001",
+        "name": "Fixture Cloud Connector"
+      },
+      {
+        "id": "70000003",
+        "name": "Internet Facing Assets"
+      }
+    ],
+    "sourceInfo": {
+      "assetId": "900000001",
+      "type": "EC_2",
+      "firstDiscovered": "2098-11-05T12:00:00Z",
+      "lastUpdated": "2099-03-02T00:00:00Z",
+      "ec2InstanceTags": [
+        {
+          "key": "Name",
+          "value": "fx-bastion"
+        },
+        {
+          "key": "role",
+          "value": "bastion"
+        }
+      ],
+      "reservationId": "r-00000000000000001",
+      "availabilityZone": "us-west-2a",
+      "privateDnsName": "ip-10-20-1-10.us-west-2.compute.internal",
+      "publicDnsName": "ec2-203-0-113-10.us-west-2.compute.amazonaws.example",
+      "localHostname": "ip-10-20-1-10.us-west-2.compute.internal",
+      "instanceId": "i-00000000000000001",
+      "instanceType": "t3.medium",
+      "createdDate": "2098-11-05T11:58:00Z",
+      "instanceState": "RUNNING",
+      "groupId": "sg-00000000000000001",
+      "groupName": "fx-bastion-sg",
+      "spotInstance": "false",
+      "accountId": "000000000000",
+      "subnetId": "subnet-00000000000000001",
+      "vpcId": "vpc-00000000000000001",
+      "region": "us-west-2",
+      "zone": "VPC",
+      "imageId": "ami-00000000000000001",
+      "publicIpAddress": "203.0.113.10",
+      "privateIpAddress": "10.20.1.10",
+      "monitoringEnabled": "false"
+    },
+    "criticalityScore": "5",
+    "qwebHostId": "800000001",
+    "lastVulnScan": "2099-03-01T06:00:00Z",
+    "vulnsUpdated": "2099-03-01T06:00:00Z",
+    "informationGatheredUpdated": "2099-03-01T06:00:00Z",
+    "fqdn": "ec2-203-0-113-10.us-west-2.compute.amazonaws.example",
+    "os": "Ubuntu Linux 20.04.6",
+    "dnsHostName": "ec2-203-0-113-10.us-west-2.compute.amazonaws.example",
+    "netbiosName": null,
+    "networkGuid": "00000000-0000-4000-8000-000000000001",
+    "address": "203.0.113.10",
+    "trackingMethod": "INSTANCE_ID",
+    "cloudProvider": "AWS",
+    "model": "t3.medium",
+    "openPorts": [
+      {
+        "port": "22",
+        "protocol": "TCP",
+        "serviceId": "2001",
+        "serviceName": "ssh"
+      }
+    ],
+    "vulnerabilities": [
+      {
+        "qid": "710901",
+        "hostInstanceVulnId": "51000000001",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710001",
+        "hostInstanceVulnId": "51000000002",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710902",
+        "hostInstanceVulnId": "51000000003",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "hostname": "ip-10-20-1-10.us-west-2.compute.internal",
+        "interfaceId": "eni-00000000000000001",
+        "interfaceName": null,
+        "macAddress": "02:00:00:00:00:01",
+        "address": "10.20.1.10"
+      }
+    ],
+    "isDockerHost": "false"
+  },
+  {
+    "id": "900000002",
+    "name": "fx-nat-gateway",
+    "created": "2098-11-05T12:00:00Z",
+    "modified": "2099-03-02T00:00:00Z",
+    "type": "HOST",
+    "tags": [
+      {
+        "id": "70000001",
+        "name": "Fixture Cloud Connector"
+      }
+    ],
+    "sourceInfo": {
+      "assetId": "900000002",
+      "type": "EC_2",
+      "firstDiscovered": "2098-11-05T12:00:00Z",
+      "lastUpdated": "2099-03-02T00:00:00Z",
+      "ec2InstanceTags": [
+        {
+          "key": "Name",
+          "value": "fx-nat-gateway"
+        },
+        {
+          "key": "role",
+          "value": "nat-gateway"
+        }
+      ],
+      "reservationId": "r-00000000000000002",
+      "availabilityZone": "us-west-2a",
+      "privateDnsName": "ip-10-20-2-10.us-west-2.compute.internal",
+      "publicDnsName": "ec2-203-0-113-20.us-west-2.compute.amazonaws.example",
+      "localHostname": "ip-10-20-2-10.us-west-2.compute.internal",
+      "instanceId": "i-00000000000000002",
+      "instanceType": "t3.medium",
+      "createdDate": "2098-11-05T11:58:00Z",
+      "instanceState": "RUNNING",
+      "groupId": "sg-00000000000000002",
+      "groupName": "fx-gateway-sg",
+      "spotInstance": "false",
+      "accountId": "000000000000",
+      "subnetId": "subnet-00000000000000001",
+      "vpcId": "vpc-00000000000000001",
+      "region": "us-west-2",
+      "zone": "VPC",
+      "imageId": "ami-00000000000000001",
+      "publicIpAddress": "203.0.113.20",
+      "privateIpAddress": "10.20.2.10",
+      "monitoringEnabled": "false"
+    },
+    "criticalityScore": "5",
+    "qwebHostId": "800000002",
+    "lastVulnScan": "2099-03-01T06:00:00Z",
+    "vulnsUpdated": "2099-03-01T06:00:00Z",
+    "informationGatheredUpdated": "2099-03-01T06:00:00Z",
+    "fqdn": "ec2-203-0-113-20.us-west-2.compute.amazonaws.example",
+    "os": "Ubuntu Linux 20.04.6",
+    "dnsHostName": "ec2-203-0-113-20.us-west-2.compute.amazonaws.example",
+    "netbiosName": null,
+    "networkGuid": "00000000-0000-4000-8000-000000000002",
+    "address": "203.0.113.20",
+    "trackingMethod": "INSTANCE_ID",
+    "cloudProvider": "AWS",
+    "model": "t3.medium",
+    "openPorts": [
+      {
+        "port": "22",
+        "protocol": "TCP",
+        "serviceId": "2001",
+        "serviceName": "ssh"
+      },
+      {
+        "port": "443",
+        "protocol": "TCP",
+        "serviceId": "2002",
+        "serviceName": "http"
+      }
+    ],
+    "vulnerabilities": [
+      {
+        "qid": "710901",
+        "hostInstanceVulnId": "51000000004",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710902",
+        "hostInstanceVulnId": "51000000005",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710001",
+        "hostInstanceVulnId": "51000000006",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710003",
+        "hostInstanceVulnId": "51000000007",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "hostname": "ip-10-20-2-10.us-west-2.compute.internal",
+        "interfaceId": "eni-00000000000000002",
+        "interfaceName": null,
+        "macAddress": "02:00:00:00:00:02",
+        "address": "10.20.2.10"
+      }
+    ],
+    "isDockerHost": "false"
+  },
+  {
+    "id": "900000003",
+    "name": "fx-k8s-worker-a",
+    "created": "2098-11-05T12:00:00Z",
+    "modified": "2099-03-02T00:00:00Z",
+    "type": "HOST",
+    "tags": [
+      {
+        "id": "70000001",
+        "name": "Fixture Cloud Connector"
+      },
+      {
+        "id": "70000002",
+        "name": "fixture-k8s-workers"
+      }
+    ],
+    "sourceInfo": {
+      "assetId": "900000003",
+      "type": "EC_2",
+      "firstDiscovered": "2098-11-05T12:00:00Z",
+      "lastUpdated": "2099-03-02T00:00:00Z",
+      "ec2InstanceTags": [
+        {
+          "key": "Name",
+          "value": "fx-k8s-worker-a"
+        },
+        {
+          "key": "aws:eks:cluster-name",
+          "value": "fx-dev"
+        },
+        {
+          "key": "kubernetes.io/cluster/fx-dev",
+          "value": "owned"
+        },
+        {
+          "key": "role",
+          "value": "node"
+        }
+      ],
+      "reservationId": "r-00000000000000003",
+      "availabilityZone": "us-west-2a",
+      "privateDnsName": "ip-10-20-3-10.us-west-2.compute.internal",
+      "publicDnsName": null,
+      "localHostname": "ip-10-20-3-10.us-west-2.compute.internal",
+      "instanceId": "i-00000000000000003",
+      "instanceType": "t3.medium",
+      "createdDate": "2098-11-05T11:58:00Z",
+      "instanceState": "RUNNING",
+      "groupId": "sg-00000000000000003",
+      "groupName": "fx-k8s-workers-a-sg",
+      "spotInstance": "true",
+      "accountId": "000000000000",
+      "subnetId": "subnet-00000000000000001",
+      "vpcId": "vpc-00000000000000001",
+      "region": "us-west-2",
+      "zone": "VPC",
+      "imageId": "ami-00000000000000001",
+      "publicIpAddress": null,
+      "privateIpAddress": "10.20.3.10",
+      "monitoringEnabled": "false"
+    },
+    "criticalityScore": "3",
+    "qwebHostId": "800000003",
+    "lastVulnScan": "2099-03-01T06:00:00Z",
+    "vulnsUpdated": "2099-03-01T06:00:00Z",
+    "informationGatheredUpdated": "2099-03-01T06:00:00Z",
+    "fqdn": "ip-10-20-3-10.us-west-2.compute.internal",
+    "os": "Ubuntu Linux 20.04.6",
+    "dnsHostName": "ip-10-20-3-10.us-west-2.compute.internal",
+    "netbiosName": null,
+    "networkGuid": "00000000-0000-4000-8000-000000000003",
+    "address": "10.20.3.10",
+    "trackingMethod": "INSTANCE_ID",
+    "cloudProvider": "AWS",
+    "model": "t3.medium",
+    "openPorts": [
+      {
+        "port": "8080",
+        "protocol": "TCP",
+        "serviceId": "2005",
+        "serviceName": "proxy_http"
+      },
+      {
+        "port": "22",
+        "protocol": "TCP",
+        "serviceId": "2001",
+        "serviceName": "ssh"
+      },
+      {
+        "port": "111",
+        "protocol": "UDP",
+        "serviceId": "2004",
+        "serviceName": "rpc_udp"
+      },
+      {
+        "port": "111",
+        "protocol": "TCP",
+        "serviceId": "2003",
+        "serviceName": "rpc"
+      },
+      {
+        "port": "80",
+        "protocol": "TCP",
+        "serviceId": "2002",
+        "serviceName": "http"
+      }
+    ],
+    "vulnerabilities": [
+      {
+        "qid": "710901",
+        "hostInstanceVulnId": "51000000008",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710902",
+        "hostInstanceVulnId": "51000000009",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710001",
+        "hostInstanceVulnId": "51000000010",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710002",
+        "hostInstanceVulnId": "51000000011",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710003",
+        "hostInstanceVulnId": "51000000012",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "hostname": "ip-10-20-3-10.us-west-2.compute.internal",
+        "interfaceId": "eni-00000000000000003",
+        "interfaceName": null,
+        "macAddress": "02:00:00:00:00:03",
+        "address": "10.20.3.10"
+      }
+    ],
+    "isDockerHost": "true"
+  },
+  {
+    "id": "900000004",
+    "name": "fx-k8s-worker-a",
+    "created": "2098-11-05T12:00:00Z",
+    "modified": "2099-03-02T00:00:00Z",
+    "type": "HOST",
+    "tags": [
+      {
+        "id": "70000001",
+        "name": "Fixture Cloud Connector"
+      },
+      {
+        "id": "70000002",
+        "name": "fixture-k8s-workers"
+      }
+    ],
+    "sourceInfo": {
+      "assetId": "900000004",
+      "type": "EC_2",
+      "firstDiscovered": "2098-11-05T12:00:00Z",
+      "lastUpdated": "2099-03-02T00:00:00Z",
+      "ec2InstanceTags": [
+        {
+          "key": "Name",
+          "value": "fx-k8s-worker-a"
+        },
+        {
+          "key": "aws:eks:cluster-name",
+          "value": "fx-dev"
+        },
+        {
+          "key": "kubernetes.io/cluster/fx-dev",
+          "value": "owned"
+        },
+        {
+          "key": "role",
+          "value": "node"
+        }
+      ],
+      "reservationId": "r-00000000000000004",
+      "availabilityZone": "us-west-2a",
+      "privateDnsName": "ip-10-20-4-10.us-west-2.compute.internal",
+      "publicDnsName": null,
+      "localHostname": "ip-10-20-4-10.us-west-2.compute.internal",
+      "instanceId": "i-00000000000000004",
+      "instanceType": "t3.medium",
+      "createdDate": "2098-11-05T11:58:00Z",
+      "instanceState": "RUNNING",
+      "groupId": "sg-00000000000000003",
+      "groupName": "fx-k8s-workers-a-sg",
+      "spotInstance": "true",
+      "accountId": "000000000000",
+      "subnetId": "subnet-00000000000000001",
+      "vpcId": "vpc-00000000000000001",
+      "region": "us-west-2",
+      "zone": "VPC",
+      "imageId": "ami-00000000000000001",
+      "publicIpAddress": null,
+      "privateIpAddress": "10.20.4.10",
+      "monitoringEnabled": "false"
+    },
+    "criticalityScore": "3",
+    "qwebHostId": "800000004",
+    "lastVulnScan": "2099-03-01T06:00:00Z",
+    "vulnsUpdated": "2099-03-01T06:00:00Z",
+    "informationGatheredUpdated": "2099-03-01T06:00:00Z",
+    "fqdn": "ip-10-20-4-10.us-west-2.compute.internal",
+    "os": "Ubuntu Linux 20.04.6",
+    "dnsHostName": "ip-10-20-4-10.us-west-2.compute.internal",
+    "netbiosName": null,
+    "networkGuid": "00000000-0000-4000-8000-000000000004",
+    "address": "10.20.4.10",
+    "trackingMethod": "INSTANCE_ID",
+    "cloudProvider": "AWS",
+    "model": "t3.medium",
+    "openPorts": [
+      {
+        "port": "8080",
+        "protocol": "TCP",
+        "serviceId": "2005",
+        "serviceName": "proxy_http"
+      },
+      {
+        "port": "22",
+        "protocol": "TCP",
+        "serviceId": "2001",
+        "serviceName": "ssh"
+      },
+      {
+        "port": "111",
+        "protocol": "UDP",
+        "serviceId": "2004",
+        "serviceName": "rpc_udp"
+      },
+      {
+        "port": "111",
+        "protocol": "TCP",
+        "serviceId": "2003",
+        "serviceName": "rpc"
+      },
+      {
+        "port": "80",
+        "protocol": "TCP",
+        "serviceId": "2002",
+        "serviceName": "http"
+      }
+    ],
+    "vulnerabilities": [
+      {
+        "qid": "710901",
+        "hostInstanceVulnId": "51000000013",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710902",
+        "hostInstanceVulnId": "51000000014",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710001",
+        "hostInstanceVulnId": "51000000015",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710002",
+        "hostInstanceVulnId": "51000000016",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710003",
+        "hostInstanceVulnId": "51000000017",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "hostname": "ip-10-20-4-10.us-west-2.compute.internal",
+        "interfaceId": "eni-00000000000000004",
+        "interfaceName": null,
+        "macAddress": "02:00:00:00:00:04",
+        "address": "10.20.4.10"
+      }
+    ],
+    "isDockerHost": "true"
+  },
+  {
+    "id": "900000005",
+    "name": "fx-k8s-worker-b1",
+    "created": "2098-11-05T12:00:00Z",
+    "modified": "2099-03-02T00:00:00Z",
+    "type": "HOST",
+    "tags": [
+      {
+        "id": "70000001",
+        "name": "Fixture Cloud Connector"
+      },
+      {
+        "id": "70000002",
+        "name": "fixture-k8s-workers"
+      }
+    ],
+    "sourceInfo": {
+      "assetId": "900000005",
+      "type": "EC_2",
+      "firstDiscovered": "2098-11-05T12:00:00Z",
+      "lastUpdated": "2099-03-02T00:00:00Z",
+      "ec2InstanceTags": [
+        {
+          "key": "Name",
+          "value": "fx-k8s-worker-b1"
+        },
+        {
+          "key": "kubernetes.io/cluster/fx-build",
+          "value": "owned"
+        },
+        {
+          "key": "role",
+          "value": "node"
+        }
+      ],
+      "reservationId": "r-00000000000000005",
+      "availabilityZone": "us-west-2a",
+      "privateDnsName": "ip-10-20-5-10.us-west-2.compute.internal",
+      "publicDnsName": null,
+      "localHostname": "ip-10-20-5-10.us-west-2.compute.internal",
+      "instanceId": "i-00000000000000005",
+      "instanceType": "t3.medium",
+      "createdDate": "2098-11-05T11:58:00Z",
+      "instanceState": "RUNNING",
+      "groupId": "sg-00000000000000004",
+      "groupName": "fx-k8s-workers-b-sg",
+      "spotInstance": "true",
+      "accountId": "000000000000",
+      "subnetId": "subnet-00000000000000001",
+      "vpcId": "vpc-00000000000000001",
+      "region": "us-west-2",
+      "zone": "VPC",
+      "imageId": "ami-00000000000000001",
+      "publicIpAddress": null,
+      "privateIpAddress": "10.20.5.10",
+      "monitoringEnabled": "false"
+    },
+    "criticalityScore": "3",
+    "qwebHostId": "800000005",
+    "lastVulnScan": "2099-03-01T06:00:00Z",
+    "vulnsUpdated": "2099-03-01T06:00:00Z",
+    "informationGatheredUpdated": "2099-03-01T06:00:00Z",
+    "fqdn": "ip-10-20-5-10.us-west-2.compute.internal",
+    "os": "Ubuntu Linux 20.04.6",
+    "dnsHostName": "ip-10-20-5-10.us-west-2.compute.internal",
+    "netbiosName": null,
+    "networkGuid": "00000000-0000-4000-8000-000000000005",
+    "address": "10.20.5.10",
+    "trackingMethod": "INSTANCE_ID",
+    "cloudProvider": "AWS",
+    "model": "t3.medium",
+    "openPorts": [
+      {
+        "port": "8080",
+        "protocol": "TCP",
+        "serviceId": "2005",
+        "serviceName": "proxy_http"
+      },
+      {
+        "port": "22",
+        "protocol": "TCP",
+        "serviceId": "2001",
+        "serviceName": "ssh"
+      },
+      {
+        "port": "111",
+        "protocol": "UDP",
+        "serviceId": "2004",
+        "serviceName": "rpc_udp"
+      },
+      {
+        "port": "111",
+        "protocol": "TCP",
+        "serviceId": "2003",
+        "serviceName": "rpc"
+      },
+      {
+        "port": "80",
+        "protocol": "TCP",
+        "serviceId": "2002",
+        "serviceName": "http"
+      }
+    ],
+    "vulnerabilities": [
+      {
+        "qid": "710901",
+        "hostInstanceVulnId": "51000000018",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710902",
+        "hostInstanceVulnId": "51000000019",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710001",
+        "hostInstanceVulnId": "51000000020",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710002",
+        "hostInstanceVulnId": "51000000021",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710003",
+        "hostInstanceVulnId": "51000000022",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "hostname": "ip-10-20-5-10.us-west-2.compute.internal",
+        "interfaceId": "eni-00000000000000005",
+        "interfaceName": null,
+        "macAddress": "02:00:00:00:00:05",
+        "address": "10.20.5.10"
+      }
+    ],
+    "isDockerHost": "true"
+  },
+  {
+    "id": "900000006",
+    "name": "fx-k8s-worker-b2",
+    "created": "2098-11-05T12:00:00Z",
+    "modified": "2099-03-02T00:00:00Z",
+    "type": "HOST",
+    "tags": [
+      {
+        "id": "70000001",
+        "name": "Fixture Cloud Connector"
+      },
+      {
+        "id": "70000002",
+        "name": "fixture-k8s-workers"
+      }
+    ],
+    "sourceInfo": {
+      "assetId": "900000006",
+      "type": "EC_2",
+      "firstDiscovered": "2098-11-05T12:00:00Z",
+      "lastUpdated": "2099-03-02T00:00:00Z",
+      "ec2InstanceTags": [
+        {
+          "key": "Name",
+          "value": "fx-k8s-worker-b2"
+        },
+        {
+          "key": "aws:eks:cluster-name",
+          "value": "fx-build"
+        },
+        {
+          "key": "kubernetes.io/cluster/fx-build",
+          "value": "owned"
+        },
+        {
+          "key": "role",
+          "value": "node"
+        }
+      ],
+      "reservationId": "r-00000000000000006",
+      "availabilityZone": "us-west-2a",
+      "privateDnsName": "ip-10-20-6-10.us-west-2.compute.internal",
+      "publicDnsName": null,
+      "localHostname": "ip-10-20-6-10.us-west-2.compute.internal",
+      "instanceId": "i-00000000000000006",
+      "instanceType": "t3.medium",
+      "createdDate": "2098-11-05T11:58:00Z",
+      "instanceState": "RUNNING",
+      "groupId": "sg-00000000000000004",
+      "groupName": "fx-k8s-workers-b-sg",
+      "spotInstance": "true",
+      "accountId": "000000000000",
+      "subnetId": "subnet-00000000000000001",
+      "vpcId": "vpc-00000000000000001",
+      "region": "us-west-2",
+      "zone": "VPC",
+      "imageId": "ami-00000000000000001",
+      "publicIpAddress": null,
+      "privateIpAddress": "10.20.6.10",
+      "monitoringEnabled": "false"
+    },
+    "criticalityScore": "3",
+    "qwebHostId": "800000006",
+    "lastVulnScan": "2099-03-01T06:00:00Z",
+    "vulnsUpdated": "2099-03-01T06:00:00Z",
+    "informationGatheredUpdated": "2099-03-01T06:00:00Z",
+    "fqdn": "ip-10-20-6-10.us-west-2.compute.internal",
+    "os": "Ubuntu Linux 20.04.6",
+    "dnsHostName": "ip-10-20-6-10.us-west-2.compute.internal",
+    "netbiosName": null,
+    "networkGuid": "00000000-0000-4000-8000-000000000006",
+    "address": "10.20.6.10",
+    "trackingMethod": "INSTANCE_ID",
+    "cloudProvider": "AWS",
+    "model": "t3.medium",
+    "openPorts": [
+      {
+        "port": "8080",
+        "protocol": "TCP",
+        "serviceId": "2005",
+        "serviceName": "proxy_http"
+      },
+      {
+        "port": "22",
+        "protocol": "TCP",
+        "serviceId": "2001",
+        "serviceName": "ssh"
+      },
+      {
+        "port": "111",
+        "protocol": "UDP",
+        "serviceId": "2004",
+        "serviceName": "rpc_udp"
+      },
+      {
+        "port": "111",
+        "protocol": "TCP",
+        "serviceId": "2003",
+        "serviceName": "rpc"
+      },
+      {
+        "port": "80",
+        "protocol": "TCP",
+        "serviceId": "2002",
+        "serviceName": "http"
+      }
+    ],
+    "vulnerabilities": [
+      {
+        "qid": "710901",
+        "hostInstanceVulnId": "51000000023",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710902",
+        "hostInstanceVulnId": "51000000024",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710001",
+        "hostInstanceVulnId": "51000000025",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710002",
+        "hostInstanceVulnId": "51000000026",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710003",
+        "hostInstanceVulnId": "51000000027",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710003",
+        "hostInstanceVulnId": "51000000028",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710006",
+        "hostInstanceVulnId": "51000000029",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "hostname": "ip-10-20-6-10.us-west-2.compute.internal",
+        "interfaceId": "eni-00000000000000006",
+        "interfaceName": null,
+        "macAddress": "02:00:00:00:00:06",
+        "address": "10.20.6.10"
+      }
+    ],
+    "isDockerHost": "true"
+  },
+  {
+    "id": "900000007",
+    "name": "fx-k8s-worker-b3",
+    "created": "2098-11-05T12:00:00Z",
+    "modified": "2099-03-02T00:00:00Z",
+    "type": "HOST",
+    "tags": [
+      {
+        "id": "70000001",
+        "name": "Fixture Cloud Connector"
+      },
+      {
+        "id": "70000002",
+        "name": "fixture-k8s-workers"
+      }
+    ],
+    "sourceInfo": {
+      "assetId": "900000007",
+      "type": "EC_2",
+      "firstDiscovered": "2098-11-05T12:00:00Z",
+      "lastUpdated": "2099-03-02T00:00:00Z",
+      "ec2InstanceTags": [
+        {
+          "key": "Name",
+          "value": "fx-k8s-worker-b3"
+        },
+        {
+          "key": "aws:eks:cluster-name",
+          "value": "fx-build"
+        },
+        {
+          "key": "kubernetes.io/cluster/fx-build",
+          "value": "owned"
+        },
+        {
+          "key": "role",
+          "value": "node"
+        }
+      ],
+      "reservationId": "r-00000000000000007",
+      "availabilityZone": "us-west-2a",
+      "privateDnsName": "ip-10-20-7-10.us-west-2.compute.internal",
+      "publicDnsName": null,
+      "localHostname": "ip-10-20-7-10.us-west-2.compute.internal",
+      "instanceId": "i-00000000000000007",
+      "instanceType": "t3.medium",
+      "createdDate": "2098-11-05T11:58:00Z",
+      "instanceState": "TERMINATED",
+      "groupId": "sg-00000000000000004",
+      "groupName": "fx-k8s-workers-b-sg",
+      "spotInstance": "true",
+      "accountId": "000000000000",
+      "subnetId": "subnet-00000000000000001",
+      "vpcId": "vpc-00000000000000001",
+      "region": "us-west-2",
+      "zone": "VPC",
+      "imageId": "ami-00000000000000001",
+      "publicIpAddress": null,
+      "privateIpAddress": "10.20.7.10",
+      "monitoringEnabled": "false"
+    },
+    "criticalityScore": "3",
+    "qwebHostId": "800000007",
+    "lastVulnScan": "2099-03-01T06:00:00Z",
+    "vulnsUpdated": "2099-03-01T06:00:00Z",
+    "informationGatheredUpdated": "2099-03-01T06:00:00Z",
+    "fqdn": "ip-10-20-7-10.us-west-2.compute.internal",
+    "os": "Ubuntu Linux 20.04.6",
+    "dnsHostName": "ip-10-20-7-10.us-west-2.compute.internal",
+    "netbiosName": null,
+    "networkGuid": "00000000-0000-4000-8000-000000000007",
+    "address": "10.20.7.10",
+    "trackingMethod": "INSTANCE_ID",
+    "cloudProvider": "AWS",
+    "model": "t3.medium",
+    "openPorts": [
+      {
+        "port": "8080",
+        "protocol": "TCP",
+        "serviceId": "2005",
+        "serviceName": "proxy_http"
+      },
+      {
+        "port": "22",
+        "protocol": "TCP",
+        "serviceId": "2001",
+        "serviceName": "ssh"
+      },
+      {
+        "port": "111",
+        "protocol": "UDP",
+        "serviceId": "2004",
+        "serviceName": "rpc_udp"
+      },
+      {
+        "port": "111",
+        "protocol": "TCP",
+        "serviceId": "2003",
+        "serviceName": "rpc"
+      },
+      {
+        "port": "80",
+        "protocol": "TCP",
+        "serviceId": "2002",
+        "serviceName": "http"
+      }
+    ],
+    "vulnerabilities": [
+      {
+        "qid": "710901",
+        "hostInstanceVulnId": "51000000030",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710001",
+        "hostInstanceVulnId": "51000000031",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710002",
+        "hostInstanceVulnId": "51000000032",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "hostname": "ip-10-20-7-10.us-west-2.compute.internal",
+        "interfaceId": "eni-00000000000000007",
+        "interfaceName": null,
+        "macAddress": "02:00:00:00:00:07",
+        "address": "10.20.7.10"
+      }
+    ],
+    "isDockerHost": "true"
+  },
+  {
+    "id": "900000008",
+    "name": "fx-web-01",
+    "created": "2098-11-05T12:00:00Z",
+    "modified": "2099-03-02T00:00:00Z",
+    "type": "HOST",
+    "tags": [
+      {
+        "id": "70000001",
+        "name": "Fixture Cloud Connector"
+      }
+    ],
+    "sourceInfo": {
+      "assetId": "900000008",
+      "type": "EC_2",
+      "firstDiscovered": "2098-11-05T12:00:00Z",
+      "lastUpdated": "2099-03-02T00:00:00Z",
+      "ec2InstanceTags": [
+        {
+          "key": "Name",
+          "value": "fx-web-01"
+        }
+      ],
+      "reservationId": "r-00000000000000008",
+      "availabilityZone": "us-west-2a",
+      "privateDnsName": "ip-10-20-8-10.us-west-2.compute.internal",
+      "publicDnsName": null,
+      "localHostname": "ip-10-20-8-10.us-west-2.compute.internal",
+      "instanceId": "i-00000000000000008",
+      "instanceType": "t3.medium",
+      "createdDate": "2098-11-05T11:58:00Z",
+      "instanceState": "RUNNING",
+      "groupId": "sg-00000000000000005",
+      "groupName": "fx-web-sg",
+      "spotInstance": "false",
+      "accountId": "000000000000",
+      "subnetId": "subnet-00000000000000001",
+      "vpcId": "vpc-00000000000000001",
+      "region": "us-west-2",
+      "zone": "VPC",
+      "imageId": "ami-00000000000000001",
+      "publicIpAddress": null,
+      "privateIpAddress": "10.20.8.10",
+      "monitoringEnabled": "false"
+    },
+    "criticalityScore": "3",
+    "qwebHostId": "800000008",
+    "lastVulnScan": "2099-03-01T06:00:00Z",
+    "vulnsUpdated": "2099-03-01T06:00:00Z",
+    "informationGatheredUpdated": "2099-03-01T06:00:00Z",
+    "fqdn": "ip-10-20-8-10.us-west-2.compute.internal",
+    "os": "Ubuntu Linux 20.04.6",
+    "dnsHostName": "ip-10-20-8-10.us-west-2.compute.internal",
+    "netbiosName": null,
+    "networkGuid": "00000000-0000-4000-8000-000000000008",
+    "address": "10.20.8.10",
+    "trackingMethod": "INSTANCE_ID",
+    "cloudProvider": "AWS",
+    "model": "t3.medium",
+    "openPorts": [
+      {
+        "port": "22",
+        "protocol": "TCP",
+        "serviceId": "2001",
+        "serviceName": "ssh"
+      },
+      {
+        "port": "80",
+        "protocol": "TCP",
+        "serviceId": "2002",
+        "serviceName": "http"
+      },
+      {
+        "port": "443",
+        "protocol": "TCP",
+        "serviceId": "2002",
+        "serviceName": "http"
+      }
+    ],
+    "vulnerabilities": [
+      {
+        "qid": "710901",
+        "hostInstanceVulnId": "51000000033",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710902",
+        "hostInstanceVulnId": "51000000034",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710001",
+        "hostInstanceVulnId": "51000000035",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710004",
+        "hostInstanceVulnId": "51000000036",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710006",
+        "hostInstanceVulnId": "51000000037",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "hostname": "ip-10-20-8-10.us-west-2.compute.internal",
+        "interfaceId": "eni-00000000000000008",
+        "interfaceName": null,
+        "macAddress": "02:00:00:00:00:08",
+        "address": "10.20.8.10"
+      }
+    ],
+    "isDockerHost": "false"
+  },
+  {
+    "id": "900000009",
+    "name": "fx-queue-01",
+    "created": "2098-11-05T12:00:00Z",
+    "modified": "2099-03-02T00:00:00Z",
+    "type": "HOST",
+    "tags": [
+      {
+        "id": "70000001",
+        "name": "Fixture Cloud Connector"
+      }
+    ],
+    "sourceInfo": {
+      "assetId": "900000009",
+      "type": "EC_2",
+      "firstDiscovered": "2098-11-05T12:00:00Z",
+      "lastUpdated": "2099-03-02T00:00:00Z",
+      "ec2InstanceTags": [
+        {
+          "key": "Name",
+          "value": "fx-queue-01"
+        }
+      ],
+      "reservationId": "r-00000000000000009",
+      "availabilityZone": "us-west-2a",
+      "privateDnsName": "ip-10-20-9-10.us-west-2.compute.internal",
+      "publicDnsName": null,
+      "localHostname": "ip-10-20-9-10.us-west-2.compute.internal",
+      "instanceId": "i-00000000000000009",
+      "instanceType": "t3.medium",
+      "createdDate": "2098-11-05T11:58:00Z",
+      "instanceState": "RUNNING",
+      "groupId": "sg-00000000000000006",
+      "groupName": "fx-data-sg",
+      "spotInstance": "false",
+      "accountId": "000000000000",
+      "subnetId": "subnet-00000000000000001",
+      "vpcId": "vpc-00000000000000001",
+      "region": "us-west-2",
+      "zone": "VPC",
+      "imageId": "ami-00000000000000001",
+      "publicIpAddress": null,
+      "privateIpAddress": "10.20.9.10",
+      "monitoringEnabled": "false"
+    },
+    "criticalityScore": "3",
+    "qwebHostId": "800000009",
+    "lastVulnScan": "2099-03-01T06:00:00Z",
+    "vulnsUpdated": "2099-03-01T06:00:00Z",
+    "informationGatheredUpdated": "2099-03-01T06:00:00Z",
+    "fqdn": "ip-10-20-9-10.us-west-2.compute.internal",
+    "os": "Ubuntu Linux 20.04.6",
+    "dnsHostName": "ip-10-20-9-10.us-west-2.compute.internal",
+    "netbiosName": null,
+    "networkGuid": "00000000-0000-4000-8000-000000000009",
+    "address": "10.20.9.10",
+    "trackingMethod": "INSTANCE_ID",
+    "cloudProvider": "AWS",
+    "model": "t3.medium",
+    "openPorts": [
+      {
+        "port": "22",
+        "protocol": "TCP",
+        "serviceId": "2001",
+        "serviceName": "ssh"
+      },
+      {
+        "port": "5672",
+        "protocol": "TCP",
+        "serviceId": null,
+        "serviceName": null
+      },
+      {
+        "port": "15672",
+        "protocol": "TCP",
+        "serviceId": "2002",
+        "serviceName": "http"
+      }
+    ],
+    "vulnerabilities": [
+      {
+        "qid": "710901",
+        "hostInstanceVulnId": "51000000038",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710902",
+        "hostInstanceVulnId": "51000000039",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710001",
+        "hostInstanceVulnId": "51000000040",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710005",
+        "hostInstanceVulnId": "51000000041",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "hostname": "ip-10-20-9-10.us-west-2.compute.internal",
+        "interfaceId": "eni-00000000000000009",
+        "interfaceName": null,
+        "macAddress": "02:00:00:00:00:09",
+        "address": "10.20.9.10"
+      }
+    ],
+    "isDockerHost": "false"
+  },
+  {
+    "id": "900000010",
+    "name": "fx-build-agent",
+    "created": "2098-11-05T12:00:00Z",
+    "modified": "2099-03-02T00:00:00Z",
+    "type": "HOST",
+    "tags": [
+      {
+        "id": "70000001",
+        "name": "Fixture Cloud Connector"
+      }
+    ],
+    "sourceInfo": {
+      "assetId": "900000010",
+      "type": "EC_2",
+      "firstDiscovered": "2098-11-05T12:00:00Z",
+      "lastUpdated": "2099-03-02T00:00:00Z",
+      "ec2InstanceTags": [
+        {
+          "key": "Name",
+          "value": "fx-build-agent"
+        }
+      ],
+      "reservationId": "r-00000000000000010",
+      "availabilityZone": "us-west-2a",
+      "privateDnsName": "ip-10-20-10-10.us-west-2.compute.internal",
+      "publicDnsName": null,
+      "localHostname": "ip-10-20-10-10.us-west-2.compute.internal",
+      "instanceId": "i-00000000000000010",
+      "instanceType": "t3.medium",
+      "createdDate": "2098-11-05T11:58:00Z",
+      "instanceState": "RUNNING",
+      "groupId": "sg-00000000000000007",
+      "groupName": "fx-build-sg",
+      "spotInstance": "false",
+      "accountId": "000000000000",
+      "subnetId": "subnet-00000000000000001",
+      "vpcId": "vpc-00000000000000001",
+      "region": "us-west-2",
+      "zone": "VPC",
+      "imageId": "ami-00000000000000001",
+      "publicIpAddress": null,
+      "privateIpAddress": "10.20.10.10",
+      "monitoringEnabled": "false"
+    },
+    "criticalityScore": "3",
+    "qwebHostId": "800000010",
+    "lastVulnScan": "2099-03-01T06:00:00Z",
+    "vulnsUpdated": "2099-03-01T06:00:00Z",
+    "informationGatheredUpdated": "2099-03-01T06:00:00Z",
+    "fqdn": "ip-10-20-10-10.us-west-2.compute.internal",
+    "os": "Ubuntu Linux 20.04.6",
+    "dnsHostName": "ip-10-20-10-10.us-west-2.compute.internal",
+    "netbiosName": null,
+    "networkGuid": "00000000-0000-4000-8000-000000000010",
+    "address": "10.20.10.10",
+    "trackingMethod": "INSTANCE_ID",
+    "cloudProvider": "AWS",
+    "model": "t3.medium",
+    "openPorts": [
+      {
+        "port": "22",
+        "protocol": "TCP",
+        "serviceId": "2001",
+        "serviceName": "ssh"
+      },
+      {
+        "port": "15672",
+        "protocol": "TCP",
+        "serviceId": "2002",
+        "serviceName": "http"
+      }
+    ],
+    "vulnerabilities": [
+      {
+        "qid": "710901",
+        "hostInstanceVulnId": "51000000042",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710902",
+        "hostInstanceVulnId": "51000000043",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710005",
+        "hostInstanceVulnId": "51000000044",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      },
+      {
+        "qid": "710006",
+        "hostInstanceVulnId": "51000000045",
+        "firstFound": "2099-02-01T06:00:00Z",
+        "lastFound": "2099-03-01T06:00:00Z"
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "hostname": "ip-10-20-10-10.us-west-2.compute.internal",
+        "interfaceId": "eni-00000000000000010",
+        "interfaceName": null,
+        "macAddress": "02:00:00:00:00:0a",
+        "address": "10.20.10.10"
+      }
+    ],
+    "isDockerHost": "true"
+  },
+  {
+    "id": "900000011",
+    "name": "fx-idle-runner",
+    "created": "2098-11-05T12:00:00Z",
+    "modified": "2099-03-02T00:00:00Z",
+    "type": "HOST",
+    "tags": [
+      {
+        "id": "70000001",
+        "name": "Fixture Cloud Connector"
+      }
+    ],
+    "sourceInfo": {
+      "assetId": "900000011",
+      "type": "EC_2",
+      "firstDiscovered": "2098-11-05T12:00:00Z",
+      "lastUpdated": "2099-03-02T00:00:00Z",
+      "ec2InstanceTags": [
+        {
+          "key": "Name",
+          "value": "fx-idle-runner"
+        }
+      ],
+      "reservationId": "r-00000000000000011",
+      "availabilityZone": "us-west-2a",
+      "privateDnsName": "ip-10-20-11-10.us-west-2.compute.internal",
+      "publicDnsName": null,
+      "localHostname": "ip-10-20-11-10.us-west-2.compute.internal",
+      "instanceId": "i-00000000000000011",
+      "instanceType": "t3.medium",
+      "createdDate": "2098-11-05T11:58:00Z",
+      "instanceState": "RUNNING",
+      "groupId": "sg-00000000000000007",
+      "groupName": "fx-build-sg",
+      "spotInstance": "false",
+      "accountId": "000000000000",
+      "subnetId": "subnet-00000000000000001",
+      "vpcId": "vpc-00000000000000001",
+      "region": "us-west-2",
+      "zone": "VPC",
+      "imageId": "ami-00000000000000001",
+      "publicIpAddress": null,
+      "privateIpAddress": "10.20.11.10",
+      "monitoringEnabled": "false"
+    },
+    "criticalityScore": "3",
+    "qwebHostId": null,
+    "lastVulnScan": null,
+    "vulnsUpdated": null,
+    "informationGatheredUpdated": null,
+    "fqdn": "ip-10-20-11-10.us-west-2.compute.internal",
+    "os": "Linux",
+    "dnsHostName": "ip-10-20-11-10.us-west-2.compute.internal",
+    "netbiosName": null,
+    "networkGuid": null,
+    "address": "10.20.11.10",
+    "trackingMethod": "INSTANCE_ID",
+    "cloudProvider": "AWS",
+    "model": "t3.medium",
+    "openPorts": [],
+    "vulnerabilities": [],
+    "networkInterfaces": [
+      {
+        "hostname": "ip-10-20-11-10.us-west-2.compute.internal",
+        "interfaceId": "eni-00000000000000011",
+        "interfaceName": null,
+        "macAddress": "02:00:00:00:00:0b",
+        "address": "10.20.11.10"
+      }
+    ],
+    "isDockerHost": "false"
+  }
+]
