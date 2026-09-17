@@ -10,6 +10,12 @@ it works from what a scanner already exports: the asset inventory and the list
 of findings. Today it reads Qualys exports in the shape of the
 [reference dataset](#the-reference-dataset).
 
+![The Blast Radius UI answering an OpenSSH advisory](docs/ui.png)
+
+*The single-page UI on the reference dataset, running without a language model:
+the two scanner checks the query matched, then 341 affected hosts folded into 9
+groups and ordered by priority.*
+
 ```bash
 make install   # create .venv with every dependency and the dev tools
 make data      # check that the scanner exports are in place and intact
