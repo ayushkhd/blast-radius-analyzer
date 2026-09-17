@@ -1,0 +1,29 @@
+# Runs the API and UI on http://localhost:8000 against an artifact built on
+# the host with `make ingest`. The artifact is mounted read-only, the root
+# filesystem is read-only, and the only writable path is a tmpfs for /tmp.
+#
+#   make ingest && docker compose up --build
+#
+# ANTHROPIC_API_KEY is passed through when it is set in the shell or in .env;
+# without it the service answers with everything except the written brief.
+
+services:
+  blast-radius:
+    build: .
+    image: blast-radius-analyzer:local
+    ports:
+      - "8000:8000"
+    environment:
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      BLAST_LLM_PROVIDER: ${BLAST_LLM_PROVIDER:-anthropic}
+      BLAST_LOG_LEVEL: ${BLAST_LOG_LEVEL:-INFO}
+    volumes:
+      - ./artifacts:/data:ro
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped

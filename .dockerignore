@@ -1,0 +1,9 @@
+# Keep the build context to what the image needs: the package, the lock file
+# and the README that pyproject.toml points at. Scanner exports, artifacts
+# and model caches must never enter an image layer.
+*
+!pyproject.toml
+!uv.lock
+!README.md
+!blast_radius/
+**/__pycache__/
